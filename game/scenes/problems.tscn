@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dgvjlqnh5np27"]
+
+[ext_resource type="Script" uid="uid://prweuyx8hdj7" path="res://scripts/problems.gd" id="1_kvenv"]
+[ext_resource type="Texture2D" uid="uid://kqlrfcs3y0l8" path="res://textures/bg 2.webp" id="2_loro7"]
+[ext_resource type="Theme" uid="uid://b8kxsmgqni15g" path="res://misc/theme.tres" id="3_loro7"]
+[ext_resource type="AudioStream" uid="uid://bfjupfwhlo4tq" path="res://audio/music2.mp3" id="4_kqw3d"]
+
+[node name="Problems" type="Control" unique_id=1891198899]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kvenv")
+
+[node name="Panel" type="TextureRect" parent="." unique_id=516573702]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_loro7")
+expand_mode = 2
+
+[node name="Time Left" type="ProgressBar" parent="Panel" unique_id=1337586848]
+custom_minimum_size = Vector2(894.38, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -454.0
+offset_top = -126.0
+offset_right = 440.38
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 60.0
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=948643028]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.5
+offset_top = -55.75
+offset_right = 285.5
+offset_bottom = 55.75
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_loro7")
+
+[node name="Label" type="Label" parent="Panel/Panel" unique_id=1941509017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_loro7")
+theme_override_font_sizes/font_size = 27
+text = "Fill in the questions on your phone!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=745331384]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer" unique_id=1138279647]
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1719053648]
+stream = ExtResource("4_kqw3d")
+autoplay = true

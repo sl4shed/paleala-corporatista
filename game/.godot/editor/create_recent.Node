@@ -1,0 +1,10 @@
+Panel
+HBoxContainer
+ProgressBar
+TextureProgressBar
+Label
+AudioStreamPlayer
+TextureRect
+AnimationPlayer
+Button
+VBoxContainer

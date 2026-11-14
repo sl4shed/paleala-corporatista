@@ -1,0 +1,117 @@
+/* Site-wide look, matching the Godot theme (game/misc/theme.tres).
+   Loaded for every page from nuxt.config.ts → css. */
+
+@font-face {
+  font-family: "OldNewspaperTypes";
+  src: url("~/assets/fonts/OldNewspaperTypes.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Melt-Swashes";
+  src: url("~/assets/fonts/Melt-Swashes.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  /* How thick the gold frame of bg 2.webp is drawn. Page content stays inside it. */
+  --frame: clamp(28px, 7vmin, 64px);
+  --ink: #000;
+  --accent: #ff9312;
+  --error: #9b1c00;
+  /* The phone UI is always on cork, so no dark mode. */
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "OldNewspaperTypes", Georgia, serif;
+  color: var(--ink);
+  background: #6b4a2b; /* shows only while bg 2.webp loads */
+  padding: var(--frame);
+  min-height: 100dvh;
+}
+
+/* bg 2.webp (cork board in a gold frame) behind everything, at all times.
+   Drawn as a 9-slice so the frame stays whole on any phone shape. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  border-style: solid;
+  border-width: var(--frame);
+  border-image: url("~/assets/textures/bg 2.webp") 112 fill / var(--frame) stretch;
+  pointer-events: none;
+}
+
+/* ── Button (Godot: normal = button.webp, hover/pressed = button_pressed.webp) ── */
+button {
+  font-family: inherit;
+  font-size: 20px;
+  line-height: 1.1;
+  color: var(--ink);
+  min-height: 52px;
+  padding: 4px 14px;
+  border-style: solid;
+  border-width: 12px;
+  border-image: url("~/assets/textures/button.webp") 24 fill / 12px stretch;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+button:hover:not(:disabled),
+button:active:not(:disabled) {
+  border-image-source: url("~/assets/textures/button_pressed.webp");
+}
+button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.75);
+  outline-offset: 2px;
+}
+/* Godot "disabled": flat dark translucent box, faded text */
+button:disabled {
+  border-image: none;
+  border-color: transparent;
+  border-radius: 3px;
+  background: rgba(26, 26, 26, 0.3);
+  color: rgba(223, 223, 223, 0.5);
+  cursor: default;
+}
+
+/* ── Panel (Godot: Panel = panel.webp) ── */
+.panel {
+  border-style: solid;
+  border-width: 26px 30px 10px;
+  border-image: url("~/assets/textures/panel.webp") 52 60 15 fill / 26px 30px 10px stretch;
+  padding: 6px 4px 18px;
+}
+
+/* ── Text inputs, styled to sit on the panel ── */
+input {
+  width: 100%;
+  min-width: 0;
+  font-family: inherit;
+  font-size: 20px;
+  color: var(--ink);
+  padding: 10px 12px;
+  border: 2px solid #ffad4d;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.55);
+}
+input:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.75);
+  outline-offset: 2px;
+}
+input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}

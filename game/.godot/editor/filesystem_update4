@@ -1,0 +1,16 @@
+res://lobby.tscn
+res://net.gd
+res://lobby.gd
+res://scenes/main_menu.tscn
+res://scenes/lobby.tscn
+res://scripts/main_menu.gd
+res://scripts/lobby.gd
+res://scripts/game.gd
+res://misc/theme.tres
+res://scenes/problems.tscn
+res://scripts/problems.gd
+res://scenes/tutorial.tscn
+res://scripts/tutorial.gd
+res://scenes/problems_tutorial.tscn
+res://scripts/problems_tutorial.gd
+res://scenes/opening.tscn

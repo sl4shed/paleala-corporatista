@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://blxqkoeahdgsn"]
+
+[ext_resource type="Script" uid="uid://pfso43asvihq" path="res://scripts/lobby.gd" id="1_o1atq"]
+[ext_resource type="FontFile" uid="uid://dkvpbi4lm70fk" path="res://misc/OldNewspaperTypes.ttf" id="3_pc087"]
+[ext_resource type="Theme" uid="uid://b8kxsmgqni15g" path="res://misc/theme.tres" id="4_apkv3"]
+[ext_resource type="AudioStream" uid="uid://cusbe72mqe4j" path="res://audio/music1.mp3" id="4_nqcc7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_st70h"]
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7522t"]
+font = ExtResource("3_pc087")
+font_size = 23
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xq6v8"]
+font = ExtResource("3_pc087")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ophcw"]
+font = ExtResource("3_pc087")
+font_size = 29
+font_color = Color(0, 0, 0, 1)
+
+[node name="Lobby" type="Control" unique_id=743380173]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o1atq")
+
+[node name="Panel" type="TextureRect" parent="." unique_id=1942258283]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=1964270959]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 23.0
+offset_right = 523.0
+offset_bottom = 257.0
+theme = ExtResource("4_apkv3")
+
+[node name="Room Code" type="Label" parent="Panel/Panel" unique_id=45606940]
+layout_mode = 1
+offset_left = 22.0
+offset_top = 20.0
+offset_right = 481.0
+offset_bottom = 167.0
+text = "Hold Up..."
+label_settings = SubResource("LabelSettings_st70h")
+
+[node name="details" type="Label" parent="Panel/Panel/Room Code" unique_id=797445946]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 420.0
+offset_bottom = 187.0
+text = "Go to nicovala.sl4shed.xyz
+and enter this code to play"
+label_settings = SubResource("LabelSettings_7522t")
+
+[node name="details2" type="Label" parent="Panel/Panel/Room Code" unique_id=1503153259]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 420.0
+offset_bottom = 25.0
+text = "Room Code:"
+label_settings = SubResource("LabelSettings_xq6v8")
+
+[node name="Players" type="VBoxContainer" parent="Panel" unique_id=89723262]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -371.0
+offset_top = -297.0
+offset_right = -41.0
+offset_bottom = 297.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel/Players" unique_id=488649786]
+custom_minimum_size = Vector2(0, 50.235)
+layout_mode = 2
+theme = ExtResource("4_apkv3")
+
+[node name="Label" type="Label" parent="Panel/Players/Panel" unique_id=810601607]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1. Gica Polonic (VIP)"
+label_settings = SubResource("LabelSettings_ophcw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="Panel" unique_id=916339862]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -73.0
+offset_right = 240.0
+offset_bottom = -19.0
+grow_vertical = 0
+theme = ExtResource("4_apkv3")
+theme_override_fonts/font = ExtResource("3_pc087")
+theme_override_font_sizes/font_size = 32
+text = "Go back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1176994286]
+stream = ExtResource("4_nqcc7")
+autoplay = true
+
+[connection signal="pressed" from="Panel/Back" to="." method="back"]
