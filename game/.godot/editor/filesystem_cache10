@@ -1,3 +1,41 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1794648593
+::res://::1794682222
 icon.svg::CompressedTexture2D::6410708025087025419::1794648588::1794648594::1::::<><><>0<>0<>20bf00c5253300b41ce4e61b9998d229<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://audio/::1794683261
+ding.mp3::AudioStreamMP3::8719015752092270565::1794681845::1794681845::1::::<><><>0<>0<>c45061098e4abd183448143b9560b76a<>res://.godot/imported/ding.mp3-782c5beeaf78bbdad63ae12772726bad.mp3str::
+music1.mp3::AudioStreamMP3::182760194791530387::1794683261::1794683261::1::::<><><>0<>0<>221b40f4ac8ce2b4af390c9081597790<>res://.godot/imported/music1.mp3-4108bec6058e0ff265ee1634ab4ab07c.mp3str::
+music2.mp3::AudioStreamMP3::2757185725369483658::1794683261::1794683261::1::::<><><>0<>0<>256c6177ed1498f86be154b038e554b8<>res://.godot/imported/music2.mp3-2bdfca9639a4d0fd32f1752d35533c3f.mp3str::
+music3.mp3::AudioStreamMP3::3181757204759698850::1794683261::1794683261::1::::<><><>0<>0<>2fd39906955ee402f121ff7c6e50a8ac<>res://.godot/imported/music3.mp3-410300b5439408896e62aa5907715b71.mp3str::
+problems tutorial line 1.mp3::AudioStreamMP3::7596973063729094325::1794681640::1794681640::1::::<><><>0<>0<>1ca236e9083af101e12dd4b6177958dc<>res://.godot/imported/problems tutorial line 1.mp3-03fc318f3832e6ecbf4d36673e64782e.mp3str::
+problems tutorial line 2.mp3::AudioStreamMP3::6771010966791712878::1794681640::1794681640::1::::<><><>0<>0<>a6999ea4b029f1494ff5c01817171958<>res://.godot/imported/problems tutorial line 2.mp3-52a34f8148bc7430ce014f31b3f63409.mp3str::
+problems tutorial line 3.mp3::AudioStreamMP3::8398164208763065877::1794681956::1794681956::1::::<><><>0<>0<>959614a4b9a279986982f09fa769ae05<>res://.godot/imported/problems tutorial line 3.mp3-33fd70a5ec7506f70f069b87146f0279.mp3str::
+punch.mp3::AudioStreamMP3::4943260309360964554::1794681763::1794681764::1::::<><><>0<>0<>30b4c127042c34afea6d3cfad8bbf9e5<>res://.godot/imported/punch.mp3-43e43ee3b8907c3e05010b727de7767e.mp3str::
+::res://misc/::1794672498
+Melt-Swashes.ttf::FontFile::5683879539748198713::1794663880::1794663880::1::::<><><>0<>0<>90cf2018a3bc060cdec48739d8b538d3<>res://.godot/imported/Melt-Swashes.ttf-3e598ef46bacf83dbdf897590d71ad1c.fontdata::
+OldNewspaperTypes.ttf::FontFile::7905415426483525880::1794663907::1794663907::1::::<><><>0<>0<>a5e479f6086bb862adc03d5bb2088fa9<>res://.godot/imported/OldNewspaperTypes.ttf-b7cfe1602cbe6acc24dc221b7b08ab1b.fontdata::
+theme.tres::Theme::4724725576706397178::1794672498::0::1::::<><><>0<>0<><>::uid://dkvpbi4lm70fk::::res://misc/OldNewspaperTypes.ttf<>uid://bikglwlxbup73::::res://textures/button_pressed.webp<>uid://q85j5ni41tyd::::res://textures/button.webp<>uid://cw433ob5q1x74::::res://scripts/Group_167.webp
+::res://scenes/::1794682546
+lobby.tscn::PackedScene::3206968723393744017::1794672052::0::1::::<><><>0<>0<><>::uid://pfso43asvihq::::res://scripts/lobby.gd<>uid://dkvpbi4lm70fk::::res://misc/OldNewspaperTypes.ttf<>uid://b8kxsmgqni15g::::res://misc/theme.tres
+main_menu.tscn::PackedScene::4317456189101224751::1794682238::0::1::::<><><>0<>0<><>::uid://dy06aerj2cdfi::::res://scripts/main_menu.gd<>uid://dffmcy8iusiy::::res://textures/main menu.webp<>uid://b8kxsmgqni15g::::res://misc/theme.tres
+opening.tscn::PackedScene::2614181004275696674::1794672921::0::1::::<><><>0<>0<><>::
+problems.tscn::PackedScene::7624314003225331802::1794674638::0::1::::<><><>0<>0<><>::uid://prweuyx8hdj7::::res://scripts/problems.gd<>uid://b3cib511lyer7::::res://textures/bg.webp<>uid://b8kxsmgqni15g::::res://misc/theme.tres
+problems_tutorial.tscn::PackedScene::490680695979670308::1794682546::0::1::::<><><>0<>0<><>::uid://6v7xegwq1y01::::res://scripts/problems_tutorial.gd<>uid://kqlrfcs3y0l8::::res://textures/bg 2.webp<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://dgibbid08600x::::res://audio/problems tutorial line 1.mp3<>uid://c3p6tc66tf2pm::::res://audio/problems tutorial line 2.mp3<>uid://drwesjnejehlt::::res://audio/problems tutorial line 3.mp3<>uid://ccos1l8tx31ow::::res://audio/punch.mp3<>uid://dwhs6enw6df3r::::res://audio/ding.mp3
+tutorial.tscn::PackedScene::3884593961785099938::1794669715::0::1::::<><><>0<>0<><>::uid://c8aae3ceiv3np::::res://scripts/tutorial.gd
+::res://scenes/misc/::1794662371
+::res://scripts/::1794673089
+game.gd::GDScript::5822223228195347293::1794670180::0::1::::<>Node<><>0<>0<><>::
+Group_167.webp::CompressedTexture2D::6378613698574646281::1794671865::1794671865::1::::<><><>0<>0<>dde76f1f052e14359ae4b0f330bdf61d<>res://.godot/imported/Group_167.webp-5af27d58d4129384186b8d4c8e77c10b.ctex::
+lobby.gd::GDScript::1064274016781816294::1794669611::0::1::::<>Control<><>0<>0<><>::
+main_menu.gd::GDScript::8897286205819492958::1794666256::0::1::::<>Control<><>0<>0<><>::
+net.gd::GDScript::2212012095337420736::1794653025::0::1::::<>Node<><>0<>0<><>::
+problems.gd::GDScript::1089271082037685382::1794672873::0::1::::<>Control<><>0<>0<><>::
+problems_tutorial.gd::GDScript::2221190323026836956::1794673089::0::1::::<>Control<><>0<>0<><>::
+tutorial.gd::GDScript::7089081824553593825::1794669603::0::1::::<>Control<><>0<>0<><>::
+::res://textures/::1794682386
+bg 2.webp::CompressedTexture2D::735616992424681787::1794682386::1794682386::1::::<><><>0<>0<>cae134ada7c2030b6b3435ad89ad37a8<>res://.godot/imported/bg 2.webp-0dc7298b323727db4d0cc7ac3634e1fb.ctex::
+bg.webp::CompressedTexture2D::4356326199864552354::1794671878::1794671890::1::::<><><>0<>0<>b9ce59b013b3ade8014fc819a08369cd<>res://.godot/imported/bg.webp-375143c590c165c744440a499633e4ce.ctex::
+button.webp::CompressedTexture2D::1192985142206872287::1794671876::1794671910::1::::<><><>0<>0<>c87ad7844733f84fa06d840a6cdfd157<>res://.godot/imported/button.webp-1cbcffe634a33c7eed6cbebe06a4bb49.ctex::
+button_pressed.webp::CompressedTexture2D::2968960329581217896::1794671874::1794671913::1::::<><><>0<>0<>4aad48e741320451d1405cbe66c16bba<>res://.godot/imported/button_pressed.webp-8939b76a763ec991fa7bcf19be89827f.ctex::
+fucking splash screen.png::CompressedTexture2D::4951220228557748368::1794664043::1794664043::1::::<><><>0<>0<>4a7e99397076b171c099ca027ce76286<>res://.godot/imported/fucking splash screen.png-31a1d2ac8ffaef6572ac6ab8ab9bd14c.ctex::
+main menu.webp::CompressedTexture2D::221213577807960240::1794682176::1794682222::1::::<><><>0<>0<>9cd380e2677bc88290d53d7604db5639<>res://.godot/imported/main menu.webp-df0a727997a08bbea6dbc79ec0845e8e.ctex::
+panel.webp::CompressedTexture2D::514969905167813637::1794671870::1794671893::1::::<><><>0<>0<>0c71bfcac7ba32625061296eb876b29c<>res://.godot/imported/panel.webp-773fa979c0f0126e7d1a70055d1b8c75.ctex::

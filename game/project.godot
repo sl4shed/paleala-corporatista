@@ -10,9 +10,20 @@ config_version=5
 
 [application]
 
-config/name="paleala-corporatista"
+config/name="Păleală Corporatistă"
+config/description="Tu și prietenii tăi trebuie să vă scoateți compania din faliment. Oare veți reuși?"
+config/version="1.0"
+run/main_scene="uid://b2rn4w1qushb8"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0.1749846, 0.17498463, 0.17498457, 1)
+boot_splash/stretch_mode=4
+boot_splash/image="uid://ccsn4ydempnoi"
 config/icon="res://icon.svg"
+
+[autoload]
+
+Net="*res://scripts/net.gd"
+Game="*uid://co7lfv20pu41f"
 
 [display]
 
