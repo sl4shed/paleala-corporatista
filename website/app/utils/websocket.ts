@@ -1,11 +1,8 @@
-// Phone-side mirror of the Godot `Net` autoload (game/scripts/net.gd).
-// Nuxt auto-imports this, so `Net` is available in every component.
-//
 // Usage:
 //   Net.join("ABCD", "Ana")
 //   Net.message.connect((data) => { ... })   // auto-disconnects when the component unmounts
 //   Net.send({ answer: "socks" })
-//   Net.state.status / Net.state.roomCode    // reactive, use in templates
+//   Net.state.status / Net.state.roomCode    // reactive
 
 import { reactive, getCurrentScope, onScopeDispose } from "vue";
 
@@ -13,7 +10,7 @@ export class Signal<A extends unknown[] = []> {
   private handlers = new Set<(...args: A) => void>();
 
   connect(fn: (...args: A) => void): () => void {
-    if (import.meta.server) return () => {}; // never keep handlers from SSR
+    if (import.meta.server) return () => {};
     this.handlers.add(fn);
     const off = () => this.disconnect(fn);
     if (getCurrentScope()) onScopeDispose(off);
@@ -64,7 +61,7 @@ function save(key: string, value: string) {
   } catch {}
 }
 
-/** A message switches screens if it has a `screen` name and its type is "screen" (or it has no type). */
+/** screen switch messages have "type": screen */
 function isScreen(data: any): boolean {
   return (
     !!data &&
@@ -77,7 +74,6 @@ function isScreen(data: any): boolean {
 class NetClient {
   readonly joined = new Signal<[id: string, code: string]>();
   readonly message = new Signal<[data: any]>();
-  /** The host switched the phone to a new screen ({ type: "screen", screen: "name", ... }). */
   readonly screenChanged = new Signal<[screen: any]>();
   readonly hostLeft = new Signal();
   readonly error = new Signal<[reason: NetError]>();
@@ -89,9 +85,7 @@ class NetClient {
     playerId: "",
     name: "",
     lastMessage: null as any,
-    /** Last screen message from the host, e.g. { type: "screen", screen: "tutorial", ... }. */
     screen: null as any,
-    /** True if this player is the VIP (Godot sends { host: true }). */
     host: false,
     audience: false,
   });
@@ -266,5 +260,5 @@ class NetClient {
   }
 }
 
-/** The one shared connection, like a Godot autoload. */
+/** Singleton type shi */
 export const Net = new NetClient();

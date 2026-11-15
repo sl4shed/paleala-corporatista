@@ -2,7 +2,16 @@
 const props = defineProps(["screen", "host", "audience"]);
 
 const SIZE = 600;
-const COLORS = ["#1b1b1b", "#d62828", "#1d4ed8", "#2a9d3c", "#f4b400", "#8b4513", "#ff7ab6", "#ffffff"];
+const COLORS = [
+  "#1b1b1b",
+  "#d62828",
+  "#1d4ed8",
+  "#2a9d3c",
+  "#f4b400",
+  "#8b4513",
+  "#ff7ab6",
+  "#ffffff",
+];
 const BRUSHES = [4, 10, 24];
 
 const canvas = ref();
@@ -42,7 +51,10 @@ function ctx() {
 
 function point(e) {
   const r = canvas.value.getBoundingClientRect();
-  return [((e.clientX - r.left) / r.width) * SIZE, ((e.clientY - r.top) / r.height) * SIZE];
+  return [
+    ((e.clientX - r.left) / r.width) * SIZE,
+    ((e.clientY - r.top) / r.height) * SIZE,
+  ];
 }
 
 function paint(c, stroke) {

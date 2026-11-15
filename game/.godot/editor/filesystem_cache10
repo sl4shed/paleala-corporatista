@@ -1,5 +1,6 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1794728308
+::res://::1794733096
+export_presets.cfg::TextFile::-1::1794733028::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::6410708025087025419::1794648588::1794648594::1::::<><><>0<>0<>20bf00c5253300b41ce4e61b9998d229<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://audio/::1794728654
 2.0_details1.mp3::AudioStreamMP3::1148740833991767672::1794724465::1794724466::1::::<><><>0<>0<>bc79e9616fe32eba8ca99efe2721f92c<>res://.godot/imported/2.0_details1.mp3-2bb03f997cfa5bd3893c94c0be348a6e.mp3str::
@@ -42,17 +43,18 @@ whaat a hell na.mp3::AudioStreamMP3::4755468170821904654::1794728503::1794728503
 Melt-Swashes.ttf::FontFile::5683879539748198713::1794663880::1794663880::1::::<><><>0<>0<>90cf2018a3bc060cdec48739d8b538d3<>res://.godot/imported/Melt-Swashes.ttf-3e598ef46bacf83dbdf897590d71ad1c.fontdata::
 OldNewspaperTypes.ttf::FontFile::7905415426483525880::1794663907::1794663907::1::::<><><>0<>0<>a5e479f6086bb862adc03d5bb2088fa9<>res://.godot/imported/OldNewspaperTypes.ttf-b7cfe1602cbe6acc24dc221b7b08ab1b.fontdata::
 theme.tres::Theme::4724725576706397178::1794702371::0::1::::<><><>0<>0<><>::uid://dkvpbi4lm70fk::::res://misc/OldNewspaperTypes.ttf<>uid://bikglwlxbup73::::res://textures/button_pressed.webp<>uid://q85j5ni41tyd::::res://textures/button.webp<>uid://cw433ob5q1x74::::res://scripts/Group_167.webp<>uid://mgy1110evfhd::::res://textures/progressbar.webp<>uid://dwa00nqddiveg::::res://textures/progressbar_content.webp
-::res://scenes/::1794728317
-2.0_details.tscn::PackedScene::-1::1794718032::0::1::::<><><>0<>0<><>::
+::res://scenes/::1794733076
+2.0_details.tscn::PackedScene::4276895970670396331::1794729356::0::1::::<><><>0<>0<><>::uid://hu4bmue83l0b::::res://scripts/2.0_details.gd<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://kqlrfcs3y0l8::::res://textures/bg 2.webp<>uid://bfjupfwhlo4tq::::res://audio/music2.mp3<>uid://djl6ftfa77sm2::::res://audio/moving on.mp3<>uid://dx1kb6hvobvpn::::res://audio/finished early.mp3
 2.0_details_tutorial.tscn::PackedScene::8862074168585255576::1794728293::0::1::::<><><>0<>0<><>::
-2.0_drawing.tscn::PackedScene::-1::1794718032::0::1::::<><><>0<>0<><>::
+2.0_drawing.tscn::PackedScene::3170214908494754882::1794729378::0::1::::<><><>0<>0<><>::uid://bvm62ir0s5lwc::::res://scripts/2.0_drawing.gd<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://kqlrfcs3y0l8::::res://textures/bg 2.webp<>uid://bfjupfwhlo4tq::::res://audio/music2.mp3<>uid://djl6ftfa77sm2::::res://audio/moving on.mp3<>uid://dx1kb6hvobvpn::::res://audio/finished early.mp3
 2.0_drawing_tutorial.tscn::PackedScene::1378373451798062868::1794720426::0::1::::<><><>0<>0<><>::
 details.tscn::PackedScene::5895202053581135382::1794716349::0::1::::<><><>0<>0<><>::uid://cu2qru3uf7u4l::::res://scripts/details.gd<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://kqlrfcs3y0l8::::res://textures/bg 2.webp<>uid://bfjupfwhlo4tq::::res://audio/music2.mp3<>uid://djl6ftfa77sm2::::res://audio/moving on.mp3<>uid://dx1kb6hvobvpn::::res://audio/finished early.mp3
 details_tutorial.tscn::PackedScene::4385182619460595599::1794723481::0::1::::<><><>0<>0<><>::uid://dl1h233b47g2d::::res://scripts/details_tutorial.gd<>uid://kqlrfcs3y0l8::::res://textures/bg 2.webp<>uid://cku212a25gk1i::::res://audio/details1.mp3<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://dxl61dpc62ui7::::res://audio/details2.mp3<>uid://cgb3as6xc64sg::::res://audio/details3.mp3<>uid://2lvxkniqou8i::::res://scenes/misc/lucian.tscn
 drawing.tscn::PackedScene::-1::1794712327::0::1::::<><><>0<>0<><>::
 drawing_tutorial.tscn::PackedScene::1523567642611962633::1794725280::0::1::::<><><>0<>0<><>::uid://pp6kfq7ksyip::::res://scripts/drawing_tutorial.gd<>uid://kqlrfcs3y0l8::::res://textures/bg 2.webp<>uid://c1h0823bdge8a::::res://audio/drawing.mp3<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://bti4tycjpcped::::res://textures/drawing.png<>uid://2lvxkniqou8i::::res://scenes/misc/lucian.tscn
 lobby.tscn::PackedScene::3206968723393744017::1794726746::0::1::::<><><>0<>0<><>::uid://pfso43asvihq::::res://scripts/lobby.gd<>uid://nwa0q2adriub::::res://textures/blurry-office-interior-background-with-tables-and-chairs-suitable-for-overlaying-text-or-graphics-photo.jpeg<>uid://dkvpbi4lm70fk::::res://misc/OldNewspaperTypes.ttf<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://cusbe72mqe4j::::res://audio/music1.mp3<>uid://b2ff2nrmh8rif::::res://textures/chairs.webp<>uid://bsdwob7yoay86::::res://textures/gooblet.webp<>uid://c6hx21ca8y4dl::::res://textures/chair.webp
-main_menu.tscn::PackedScene::4317456189101224751::1794726696::0::1::::<><><>0<>0<><>::uid://dy06aerj2cdfi::::res://scripts/main_menu.gd<>uid://dffmcy8iusiy::::res://textures/main menu.webp<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://04we0cna4l3b::::res://textures/lOGO.webp
+main_menu.tscn::PackedScene::4317456189101224751::1794730822::0::1::::<><><>0<>0<><>::uid://dy06aerj2cdfi::::res://scripts/main_menu.gd<>uid://dffmcy8iusiy::::res://textures/main menu.webp<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://04we0cna4l3b::::res://textures/lOGO.webp
+midway_cutscene.tscn::PackedScene::6628881419552295585::1794729295::0::1::::<><><>0<>0<><>::uid://duqxn5enejqb4::::res://scripts/midway_cutscene.gd<>uid://waimmh27ifqm::::res://textures/jet.webp<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://bqgp8vekenn52::::res://textures/maynard.webp<>uid://dxrv63ainxmsm::::res://textures/flabbergasted.webp<>uid://duuaauxqa1eka::::res://audio/jet.mp3<>uid://cip3cta7m8104::::res://audio/ta da.mp3<>uid://b80t4pc50cvvq::::res://audio/whaat a hell na.mp3<>uid://qmpugk5kjk2s::::res://audio/2.0_details1.mp3<>uid://cdgadrjbsiwr5::::res://audio/2.0_details2.mp3<>uid://cph1apnwahyis::::res://audio/2.0_details3.mp3<>uid://bnfgel4dac0cc::::res://audio/2.0_details4.mp3<>uid://kqlrfcs3y0l8::::res://textures/bg 2.webp
 opening.tscn::PackedScene::3884593961785099938::1794727564::0::1::::<><><>0<>0<><>::uid://c8aae3ceiv3np::::res://scripts/tutorial.gd<>uid://dffmcy8iusiy::::res://textures/main menu.webp<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://b58nmgs6jvwip::::res://textures/opening1.webp<>uid://bsibbxy3pygkb::::res://textures/opening2.webp<>uid://b3bbwp8a6ejik::::res://audio/chirping.mp3<>uid://dffcb7d85jko2::::res://audio/boom.mp3<>uid://dos42nv3rjr6w::::res://audio/crowd.mp3<>uid://bbvr1s46ja4yj::::res://audio/trumpet.mp3<>uid://bem5af44w518u::::res://audio/introduction.mp3<>uid://g76e6gkbg250::::res://audio/introduction 2.mp3<>uid://drbd0f56hmkng::::res://textures/explosion.png
 presentation.tscn::PackedScene::-1::1794719593::0::1::::<><><>0<>0<><>::
 presentation_tutorial.tscn::PackedScene::5713100500825238041::1794726327::0::1::::<><><>0<>0<><>::uid://dlwfyggua1hn2::::res://scripts/presentation_tutorial.gd<>uid://kqlrfcs3y0l8::::res://textures/bg 2.webp<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://2lvxkniqou8i::::res://scenes/misc/lucian.tscn<>uid://4tpamcxchqp4::::res://audio/presentation1.mp3<>uid://dk3me64ijs0n::::res://audio/presentation2.mp3<>uid://fo5jwuqb7on::::res://audio/presentation3.mp3<>uid://bvafw128tnpbs::::res://audio/presentation4.mp3
@@ -60,36 +62,37 @@ press_conference.tscn::PackedScene::-1::1794719593::0::1::::<><><>0<>0<><>::
 press_conference_tutorial.tscn::PackedScene::7013709461544674486::1794720436::0::1::::<><><>0<>0<><>::
 problems.tscn::PackedScene::7624314003225331802::1794707082::0::1::::<><><>0<>0<><>::uid://prweuyx8hdj7::::res://scripts/problems.gd<>uid://kqlrfcs3y0l8::::res://textures/bg 2.webp<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://bfjupfwhlo4tq::::res://audio/music2.mp3<>uid://djl6ftfa77sm2::::res://audio/moving on.mp3<>uid://dx1kb6hvobvpn::::res://audio/finished early.mp3
 problems_tutorial.tscn::PackedScene::490680695979670308::1794723283::0::1::::<><><>0<>0<><>::uid://6v7xegwq1y01::::res://scripts/problems_tutorial.gd<>uid://kqlrfcs3y0l8::::res://textures/bg 2.webp<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://dgibbid08600x::::res://audio/problems tutorial line 1.mp3<>uid://c3p6tc66tf2pm::::res://audio/problems tutorial line 2.mp3<>uid://drwesjnejehlt::::res://audio/problems tutorial line 3.mp3<>uid://ccos1l8tx31ow::::res://audio/punch.mp3<>uid://dwhs6enw6df3r::::res://audio/ding.mp3<>uid://2lvxkniqou8i::::res://scenes/misc/lucian.tscn
-midway_cutscene.tscn::PackedScene::6628881419552295585::1794728317::0::1::::<><><>0<>0<><>::
-review.tscn::PackedScene::-1::1794719659::0::1::::<><><>0<>0<><>::
+review.tscn::PackedScene::7861482173984157149::1794730731::0::1::::<><><>0<>0<><>::uid://bxn1q6q8fbpcg::::res://scripts/review.gd<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://kqlrfcs3y0l8::::res://textures/bg 2.webp<>uid://bfjupfwhlo4tq::::res://audio/music2.mp3<>uid://djl6ftfa77sm2::::res://audio/moving on.mp3<>uid://dx1kb6hvobvpn::::res://audio/finished early.mp3
 review_tutorial.tscn::PackedScene::6295182167416425793::1794728063::0::1::::<><><>0<>0<><>::uid://pn6sx11b0xwj::::res://scripts/review_tutorial.gd<>uid://kqlrfcs3y0l8::::res://textures/bg 2.webp<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://cusbe72mqe4j::::res://audio/music1.mp3
-vote.tscn::PackedScene::-1::1794719659::0::1::::<><><>0<>0<><>::
+vote.tscn::PackedScene::-1::1794729487::0::1::::<><><>0<>0<><>::
+winner.tscn::PackedScene::4892226341359367430::1794729683::0::1::::<><><>0<>0<><>::uid://c3bl1gmamrqy3::::res://scripts/winner.gd<>uid://kqlrfcs3y0l8::::res://textures/bg 2.webp<>uid://b8kxsmgqni15g::::res://misc/theme.tres<>uid://cip3cta7m8104::::res://audio/ta da.mp3<>uid://dos42nv3rjr6w::::res://audio/crowd.mp3<>uid://dkwf20be5t5f1::::res://audio/outro1.mp3<>uid://cp700o80d78id::::res://audio/outro2.mp3
 ::res://scenes/misc/::1794728307
 lucian.tscn::PackedScene::1919123609330838378::1794723179::0::1::::<><><>0<>0<><>::uid://bgsr24x820q6n::::res://scripts/lucian.gd<>uid://dtxlgscslklrm::::res://textures/lucian1.webp<>uid://md7e88rsjbl6::::res://textures/lucian2.webp<>uid://rdgn2qiyrwg::::res://textures/lucian3.webp
-::res://scripts/::1794728444
-2.0_details.gd::GDScript::534372700534799471::1794719606::0::1::::<>Control<><>0<>0<><>::
-2.0_drawing.gd::GDScript::3887089823961299466::1794718125::0::1::::<>Control<><>0<>0<><>::
+::res://scripts/::1794730731
+2.0_details.gd::GDScript::534372700534799471::1794729357::0::1::::<>Control<><>0<>0<><>::
+2.0_drawing.gd::GDScript::3887089823961299466::1794729378::0::1::::<>Control<><>0<>0<><>::
 details.gd::GDScript::6233359364525308933::1794719571::0::1::::<>Control<><>0<>0<><>::
 details_tutorial.gd::GDScript::7985487902081793441::1794721302::0::1::::<>Control<><>0<>0<><>::
 drawing.gd::GDScript::1594204406961260094::1794719606::0::1::::<>Control<><>0<>0<><>::
 drawing_tutorial.gd::GDScript::1085698694397845551::1794725141::0::1::::<>Control<><>0<>0<><>::
-game.gd::GDScript::5822223228195347293::1794728169::0::1::::<>Node<><>0<>0<><>::
+game.gd::GDScript::5822223228195347293::1794729601::0::1::::<>Node<><>0<>0<><>::
 Group_167.webp::CompressedTexture2D::6378613698574646281::1794671865::1794671865::1::::<><><>0<>0<>dde76f1f052e14359ae4b0f330bdf61d<>res://.godot/imported/Group_167.webp-5af27d58d4129384186b8d4c8e77c10b.ctex::
 lobby.gd::GDScript::1064274016781816294::1794726772::0::1::::<>Control<><>0<>0<><>::
 lucian.gd::GDScript::2845794510650941379::1794723031::0::1::::<>Control<><>0<>0<><>::
 main_menu.gd::GDScript::8897286205819492958::1794666256::0::1::::<>Control<><>0<>0<><>::
+midway_cutscene.gd::GDScript::8597490256535399719::1794729295::0::1::::<>Control<><>0<>0<><>::
 net.gd::GDScript::2212012095337420736::1794712313::0::1::::<>Node<><>0<>0<><>::
 presentation.gd::GDScript::5870265336327236969::1794719599::0::1::::<>Control<><>0<>0<><>::
 presentation_tutorial.gd::GDScript::7977102411023190593::1794726310::0::1::::<>Control<><>0<>0<><>::
 press_conference.gd::GDScript::6322531655672321358::1794719659::0::1::::<>Control<><>0<>0<><>::
 problems.gd::GDScript::1089271082037685382::1794719571::0::1::::<>Control<><>0<>0<><>::
 problems_tutorial.gd::GDScript::2221190323026836956::1794683538::0::1::::<>Control<><>0<>0<><>::
-midway_cutscene.gd::GDScript::8597490256535399719::1794728444::0::1::::<>Control<><>0<>0<><>::
-review.gd::GDScript::4029209867131861886::1794728169::0::1::::<>Control<><>0<>0<><>::
+review.gd::GDScript::4029209867131861886::1794730731::0::1::::<>Control<><>0<>0<><>::
 review_tutorial.gd::GDScript::1081585185824946793::1794728061::0::1::::<>Control<><>0<>0<><>::
 tutorial.gd::GDScript::7089081824553593825::1794726956::0::1::::<>Control<><>0<>0<><>::
-vote.gd::GDScript::2380863739917758130::1794728169::0::1::::<>Control<><>0<>0<><>::
-::res://textures/::1794727174
+vote.gd::GDScript::2380863739917758130::1794729601::0::1::::<>Control<><>0<>0<><>::
+winner.gd::GDScript::6740908018261604436::1794729601::0::1::::<>Control<><>0<>0<><>::
+::res://textures/::1794733107
 bg 2.webp::CompressedTexture2D::735616992424681787::1794682386::1794682386::1::::<><><>0<>0<>cae134ada7c2030b6b3435ad89ad37a8<>res://.godot/imported/bg 2.webp-0dc7298b323727db4d0cc7ac3634e1fb.ctex::
 bg.webp::CompressedTexture2D::4356326199864552354::1794671878::1794671890::1::::<><><>0<>0<>b9ce59b013b3ade8014fc819a08369cd<>res://.godot/imported/bg.webp-375143c590c165c744440a499633e4ce.ctex::
 blurry-office-interior-background-with-tables-and-chairs-suitable-for-overlaying-text-or-graphics-photo.jpeg::CompressedTexture2D::957916804819367105::1794726381::1794726381::1::::<><><>0<>0<>c58fc7fd6e36da37d5487a686de8b72c<>res://.godot/imported/blurry-office-interior-background-with-tables-and-chairs-suitable-for-overlaying-text-or-graphics-photo.jpeg-07e2b6a20895f766f9c70a2c421046ad.ctex::
@@ -110,6 +113,8 @@ lucian3.webp::CompressedTexture2D::35288012812637238::1794722102::1794722105::1:
 lucian_bec.webp::CompressedTexture2D::4980134760005841873::1794702066::1794702094::1::::<><><>0<>0<>6fa4da1704f297851085d53e104dec5e<>res://.godot/imported/lucian_bec.webp-1c52571e1bfa6eec7050a2abfb184623.ctex::
 main menu.webp::CompressedTexture2D::221213577807960240::1794682176::1794682222::1::::<><><>0<>0<>9cd380e2677bc88290d53d7604db5639<>res://.godot/imported/main menu.webp-df0a727997a08bbea6dbc79ec0845e8e.ctex::
 maynard.webp::CompressedTexture2D::3522799244146133683::1794721775::1794721776::1::::<><><>0<>0<>0d7c65263a54c6a92e367fc8f3dcda34<>res://.godot/imported/maynard.webp-13ce2b4e247b11a7746df977beacd648.ctex::
+nicovala.png::CompressedTexture2D::8559953883256113197::1794733107::1794733107::1::::<><><>0<>0<>cf00cf99ffe0758a4f0d182f4d9c3e5a<>res://.godot/imported/nicovala.png-b60d36403764d82141de426902e72be4.ctex::
+nicovala.webp::CompressedTexture2D::4070414384122726939::1794733067::1794733076::1::::<><><>0<>0<>03a529223c610cd89a72dd9dd166de01<>res://.godot/imported/nicovala.webp-870eb8cbb9a1c76b233106a2bb3b29b4.ctex::
 opening1.webp::CompressedTexture2D::4561021553518824591::1794721775::1794721776::1::::<><><>0<>0<>c631edbf7e91e0211ae50be6eb87f6ea<>res://.godot/imported/opening1.webp-b627d873e3f0208f06f0179154fc416e.ctex::
 opening2.webp::CompressedTexture2D::3666398640402380317::1794721775::1794721776::1::::<><><>0<>0<>5c60690549a97d981213a52176ce837a<>res://.godot/imported/opening2.webp-273ebd149563229c0ce149f8b9795a9e.ctex::
 panel.webp::CompressedTexture2D::514969905167813637::1794671870::1794671893::1::::<><><>0<>0<>0c71bfcac7ba32625061296eb876b29c<>res://.godot/imported/panel.webp-773fa979c0f0126e7d1a70055d1b8c75.ctex::
