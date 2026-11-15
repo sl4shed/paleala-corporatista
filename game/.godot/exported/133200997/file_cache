@@ -9,7 +9,7 @@ res://scenes/details_tutorial.tscn::9ce82131c6972e22417b9c77cfd8dd4b::1794723481
 res://scenes/drawing.tscn::a823c9b493878f5bfd05668089ed8e56::1794712327::res://.godot/exported/133200997/export-bcdad39e54bec8957741c596b7bbf60f-drawing.scn
 res://scenes/drawing_tutorial.tscn::9e86f32a25aad5c38ed5714a30809bad::1794725280::res://.godot/exported/133200997/export-355272ab6ac7ec59e67e68805326c72e-drawing_tutorial.scn
 res://scenes/lobby.tscn::b6bd38f18343eeb4dd50bab35ee08825::1794726746::res://.godot/exported/133200997/export-f3d5c683a2834285b3c292f8847bd661-lobby.scn
-res://scenes/main_menu.tscn::c0bdf0b9203538b5261fbb900b5eb81d::1794726696::res://.godot/exported/133200997/export-ea5c6ad4629af728dc514cefde332394-main_menu.scn
+res://scenes/main_menu.tscn::1a41a5bf09224972525be9979eff8786::1794730822::res://.godot/exported/133200997/export-ea5c6ad4629af728dc514cefde332394-main_menu.scn
 res://scenes/opening.tscn::12deafa33b930c5ace5523908b9ac74a::1794727564::res://.godot/exported/133200997/export-75eb1672d05ed17754eed70ee1605694-opening.scn
 res://scenes/presentation.tscn::829d17002263eedad7b6fa3132200b24::1794719593::res://.godot/exported/133200997/export-166e4dc03e607d791dfafbaad9382e5b-presentation.scn
 res://scenes/presentation_tutorial.tscn::28af2c4537b55134f5c5839f74a7f7f5::1794726327::res://.godot/exported/133200997/export-9d40645df70b530ce181542fc1ee0415-presentation_tutorial.scn
@@ -18,7 +18,7 @@ res://scenes/press_conference_tutorial.tscn::bfaff6b077ce9992a8717be1560b7682::1
 res://scenes/problems.tscn::971cb8f584ee55d1aad41d4a30a5cda3::1794707082::res://.godot/exported/133200997/export-a271773487cb4f0ce24305619673ef53-problems.scn
 res://scenes/problems_tutorial.tscn::a5f909ad04628b76e0f6bc1a41aa6f18::1794723283::res://.godot/exported/133200997/export-01344ef6234e8fe7a81c20ed33f13835-problems_tutorial.scn
 res://scenes/midway_cutscene.tscn::ed9d77ed8cb06dd03c3f04bb258d7d94::1794729295::res://.godot/exported/133200997/export-e78277ebf630c86721532d6e86fccb92-midway_cutscene.scn
-res://scenes/review.tscn::69ce546e148d0ea250ccd3f158cc77d3::1794719659::res://.godot/exported/133200997/export-bf31a4505a4e0c25aaab210c5c556c63-review.scn
+res://scenes/review.tscn::8be114f7e2d6279317a5e60ddbe57737::1794730731::res://.godot/exported/133200997/export-bf31a4505a4e0c25aaab210c5c556c63-review.scn
 res://scenes/review_tutorial.tscn::f0f7c1e95fe4520872582bc74375d1ef::1794728063::res://.godot/exported/133200997/export-b7022f09047fb1495303893765dc8841-review_tutorial.scn
 res://scenes/vote.tscn::54311a4cfbceb4861c9431104cd7d5c8::1794729487::res://.godot/exported/133200997/export-4379b948c3ac033aca6689fb7cf8aadb-vote.scn
 res://scenes/winner.tscn::878ea9567f57358dd7e947cc72f74e66::1794729683::res://.godot/exported/133200997/export-1f23b3ed18033bf377a4f4576d633fd3-winner.scn

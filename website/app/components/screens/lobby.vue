@@ -19,7 +19,7 @@ Net.message.connect((data) => {
   <div class="lobby panel">
     <p class="text">{{ props.screen?.text ?? "You're in! Waiting for the game to start." }}</p>
     <p v-if="props.audience" class="hint">The game is full, so you're in the audience. You'll get to trash talk and vote!</p>
-    <button v-if="props.host" :disabled="starting || players < 2" @click="start">
+    <button v-if="props.host" :disabled="starting || players < 5" @click="start">
       {{ starting ? "Starting…" : "Everybody's in! start!" }}
     </button>
     <p v-else class="hint">The VIP starts the game.</p>

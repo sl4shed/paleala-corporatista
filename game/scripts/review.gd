@@ -1,6 +1,6 @@
 extends Control
 
-const NEXT_SCREEN := "2.0_details_tutorial"
+const NEXT_SCREEN := "midway_cutscene"
 
 var fallback_reviews = [
 	"One star. It arrived broken and then it broke again.",

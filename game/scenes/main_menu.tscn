@@ -48,13 +48,6 @@ theme = ExtResource("2_ekxnf")
 theme_override_font_sizes/font_size = 50
 text = "New game"
 
-[node name="Options" type="Button" parent="Panel/VBoxContainer" unique_id=1267752182]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme = ExtResource("2_ekxnf")
-theme_override_font_sizes/font_size = 50
-text = "Options"
-
 [node name="Quit" type="Button" parent="Panel/VBoxContainer" unique_id=271891443]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
@@ -63,5 +56,4 @@ theme_override_font_sizes/font_size = 50
 text = "Quit"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Play" to="." method="play"]
-[connection signal="pressed" from="Panel/VBoxContainer/Options" to="." method="options"]
 [connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="quit"]
