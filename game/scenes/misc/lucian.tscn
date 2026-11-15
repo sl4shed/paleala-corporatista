@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://2lvxkniqou8i"]
+
+[ext_resource type="Script" uid="uid://bgsr24x820q6n" path="res://scripts/lucian.gd" id="1_vnkkh"]
+[ext_resource type="Texture2D" uid="uid://dtxlgscslklrm" path="res://textures/lucian1.webp" id="2_d545l"]
+[ext_resource type="Texture2D" uid="uid://md7e88rsjbl6" path="res://textures/lucian2.webp" id="3_dgluq"]
+[ext_resource type="Texture2D" uid="uid://rdgn2qiyrwg" path="res://textures/lucian3.webp" id="4_7w33i"]
+
+[node name="Lucian" type="Control" unique_id=1729438016]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vnkkh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2117397425]
+visible = false
+layout_mode = 0
+offset_top = -1008.0
+offset_right = 630.0
+pivot_offset_ratio = Vector2(0, 1)
+texture = ExtResource("2_d545l")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=505639620]
+layout_mode = 0
+offset_top = -1008.0
+offset_right = 403.0
+pivot_offset_ratio = Vector2(0, 1)
+texture = ExtResource("3_dgluq")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1867926774]
+layout_mode = 0
+offset_top = -1008.0
+offset_right = 573.0
+pivot_offset_ratio = Vector2(0, 1)
+texture = ExtResource("4_7w33i")

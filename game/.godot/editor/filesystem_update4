@@ -16,3 +16,7 @@ res://scripts/presentation.gd
 res://scripts/2.0_details.gd
 res://scripts/drawing.gd
 res://scripts/press_conference.gd
+res://scenes/review_tutorial.tscn
+res://scenes/misc/lucian.tscn
+res://scripts/lucian.gd
+res://scenes/problems_tutorial.tscn

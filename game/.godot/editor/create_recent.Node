@@ -1,10 +1,11 @@
+AudioStreamPlayer
+TextureRect
 Control
+Node2D
 AnimationPlayer
 Label
 Panel
-AudioStreamPlayer
 Timer
-TextureRect
 HBoxContainer
 ProgressBar
 TextureProgressBar

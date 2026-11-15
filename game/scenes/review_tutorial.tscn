@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://cvxoy3r6i110x"]
 
-[node name="ReviewTutorial" type="Node2D" unique_id=653060191]
+[node name="ReviewTutorial" type="Control" unique_id=616201511]
+layout_mode = 3
+anchors_preset = 0
