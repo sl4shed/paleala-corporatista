@@ -12,8 +12,6 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ["~/assets/css/theme.css"],
-
   modules: ["@nuxthub/core", "@vueuse/nuxt/module"],
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },

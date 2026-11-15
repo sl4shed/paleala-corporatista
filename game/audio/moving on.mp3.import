@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djl6ftfa77sm2"
+path="res://.godot/imported/moving on.mp3-cc763ac688a9f808cecff17da5b363db.mp3str"
+
+[deps]
+
+source_file="res://audio/moving on.mp3"
+dest_files=["res://.godot/imported/moving on.mp3-cc763ac688a9f808cecff17da5b363db.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

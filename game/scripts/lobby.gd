@@ -41,7 +41,7 @@ func _on_player_message(id: String, data: Variant) -> void:
 	if not Game.players.has(id) or typeof(data) != TYPE_DICTIONARY:
 		return
 	if Game.get_player_value(id, "host") and data.get("start") == true:
-		Game.goto_screen("tutorial")
+		Game.goto_screen("opening")
 
 func _redraw() -> void:
 	for child in list.get_children():

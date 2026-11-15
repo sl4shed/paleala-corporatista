@@ -6,6 +6,9 @@ signal player_disconnected(id: String)
 signal player_removed(id: String)
 signal player_updated(id: String, key: String, value: Variant)
 
+var problems := []
+var details := []
+var images := []
 var players := {}:
 	set(value):
 		players = value

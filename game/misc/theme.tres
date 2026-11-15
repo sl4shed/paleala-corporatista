@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bikglwlxbup73" path="res://textures/button_pressed.webp" id="2_7pjvw"]
 [ext_resource type="Texture2D" uid="uid://q85j5ni41tyd" path="res://textures/button.webp" id="3_f70oy"]
 [ext_resource type="Texture2D" uid="uid://cw433ob5q1x74" path="res://scripts/Group_167.webp" id="4_gwsko"]
+[ext_resource type="Texture2D" uid="uid://mgy1110evfhd" path="res://textures/progressbar.webp" id="5_gwsko"]
+[ext_resource type="Texture2D" uid="uid://dwa00nqddiveg" path="res://textures/progressbar_content.webp" id="6_kpe3a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egg6x"]
 content_margin_left = 4.0
@@ -56,6 +58,12 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(0, 0, 709, 467)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6ged"]
+texture = ExtResource("5_gwsko")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fvetl"]
+texture = ExtResource("6_kpe3a")
+
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
@@ -94,3 +102,5 @@ Label/fonts/font = ExtResource("1_7pjvw")
 Label/styles/focus = SubResource("StyleBoxFlat_ohff4")
 Label/styles/normal = SubResource("StyleBoxEmpty_tuyk3")
 Panel/styles/panel = SubResource("StyleBoxTexture_gwh2h")
+ProgressBar/styles/background = SubResource("StyleBoxTexture_y6ged")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_fvetl")

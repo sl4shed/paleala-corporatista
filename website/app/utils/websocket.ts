@@ -93,6 +93,7 @@ class NetClient {
     screen: null as any,
     /** True if this player is the VIP (Godot sends { host: true }). */
     host: false,
+    audience: false,
   });
 
   private ws: WebSocket | null = null;
@@ -186,6 +187,7 @@ class NetClient {
       this.state.lastMessage = null;
       this.state.screen = null;
       this.state.host = false;
+      this.state.audience = false;
     }
   }
 
@@ -243,6 +245,7 @@ class NetClient {
       case "msg":
         this.state.lastMessage = m.data;
         if (typeof m.data?.host === "boolean") this.state.host = m.data.host;
+        if (typeof m.data?.audience === "boolean") this.state.audience = m.data.audience;
         if (isScreen(m.data)) {
           this.state.screen = m.data;
           this.screenChanged.emit(m.data);

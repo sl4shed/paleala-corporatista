@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cp8xd7x2pp4xm"]
+
+[ext_resource type="Script" uid="uid://cu2qru3uf7u4l" path="res://scripts/details.gd" id="1_6wruh"]
+
+[node name="Details" type="Control" unique_id=1723040430]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6wruh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1649197416]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1131223550]
+wait_time = 120.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1285536057]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1046604894]
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=999138809]
+
+[connection signal="timeout" from="Timer" to="." method="timeout"]

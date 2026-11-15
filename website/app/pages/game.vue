@@ -20,15 +20,25 @@ onMounted(() => {
 <template>
   <main class="game">
     <ClientOnly>
+      <div class="shim">
+        <section class="stage">
+          <component
+            :is="component"
+            :key="screen?.screen"
+            :screen="screen"
+            :host="Net.state.host"
+            :audience="Net.state.audience"
+          />
+        </section>
+      </div>
+
       <header class="bar panel">
-        <span>{{ Net.state.name }}<template v-if="Net.state.host"> (VIP)</template> · {{ Net.state.roomCode }}</span>
+        <span>
+          {{ Net.state.name }}<template v-if="Net.state.host"> (VIP)</template>
+        </span>
         <span v-if="Net.state.status !== 'connected'" class="status">Reconnecting…</span>
         <button class="leave" @click="Net.leave()">Leave</button>
       </header>
-
-      <section class="stage">
-        <component :is="component" :key="screen?.screen" :screen="screen" :host="Net.state.host" />
-      </section>
     </ClientOnly>
   </main>
 </template>
@@ -40,15 +50,18 @@ onMounted(() => {
   flex-direction: column;
   gap: 12px;
 }
+
 .bar {
   display: flex;
   align-items: center;
   gap: 12px;
   font-size: 16px;
 }
+
 .status {
   color: var(--error);
 }
+
 .leave {
   margin-left: auto;
   font-size: 16px;
@@ -56,9 +69,19 @@ onMounted(() => {
   padding: 0 8px;
   border-width: 10px;
 }
-.stage {
+
+.shim {
   flex: 1;
   display: flex;
-  flex-direction: column;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.stage {
+  /* flex: 1;
+  display: flex;
+  flex-direction: column; */
 }
 </style>

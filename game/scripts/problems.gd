@@ -1,7 +1,6 @@
 extends Control
 
-var answers = [];
-var questions = [
+var problems = [
 	{
 		"text": "My ___ keep exploding!",
 		"blanks": 1
@@ -108,18 +107,93 @@ var questions = [
 	}
 ]
 
+var fallback_answers = [
+	"socks",
+	"grandma",
+	"a haunted toaster",
+	"spaghetti",
+	"the printer",
+	"my landlord",
+	"crying",
+	"licking",
+	"a raccoon",
+	"taxes",
+	"yodeling",
+	"the neighbour's cat",
+	"a suspicious sandwich",
+	"dancing",
+	"my ex",
+	"forty pigeons",
+	"microwaving",
+	"a tiny horse",
+	"the vibes",
+	"cheese",
+]
+
+var assigned := {}
+
+var rng = RandomNumberGenerator.new()
+func _process(delta):
+	$"Panel/Time Left".value = $Timer.time_left
+
 func _ready() -> void:
 	Game.players_changed.connect(_redraw)
 	Net.player_message.connect(_on_player_message)
 	_redraw()
 
+	for id in Game.players:
+		var problem = problems.pick_random()
+		assigned[id] = problem
+		Net.send_to(id, {
+			"type": "problem",
+			"problem": problem
+		})
+	$Timer.start()
+
+func _fill(template: String, words: Array) -> String:
+	var parts = template.split("___")
+	var text = parts[0]
+	for i in range(1, parts.size()):
+		text += (str(words[i - 1]) if i - 1 < words.size() else "___") + parts[i]
+	return text
+
 func _on_player_message(id: String, data: Variant) -> void:
 	if not Game.players.has(id) or typeof(data) != TYPE_DICTIONARY: return
 	if data.get("blanks"):
-		answers.append({
+		if not assigned.has(id) or Game.problems.any(func(a): return a.player == id): return
+		Game.problems.append({
 			"player": id,
-			"blanks": data.get("blanks")
+			"text": _fill(assigned[id].text, data.get("blanks"))
 		})
+
+		if len(Game.problems) == assigned.size() && $Timer.time_left > 5:
+			# all players answered
+			$Timer.stop()
+			$AudioStreamPlayer.stop()
+			$AudioStreamPlayer3.play() # Looks like we finished early...
+			await $AudioStreamPlayer3.finished
+			Game.goto_screen("details_tutorial")
+		elif len(Game.problems) == assigned.size():
+			$Timer.stop()
+			$AudioStreamPlayer.stop()
+			$AudioStreamPlayer2.play() # Okay! Moving on...
+			await $AudioStreamPlayer2.finished
+			Game.goto_screen("details_tutorial")
+			
 
 func _redraw() -> void:
 	pass
+
+func timeout() -> void:
+	$Timer.stop()
+	var answered = Game.problems.map(func(a): return a.player)
+	for id in assigned:
+		if id in answered:
+			continue
+		var words = fallback_answers.duplicate()
+		words.shuffle()
+		Game.problems.append({
+			"player": id,
+			"text": _fill(assigned[id].text, words.slice(0, assigned[id].blanks)),
+			"auto": true
+		})
