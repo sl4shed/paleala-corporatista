@@ -25,6 +25,7 @@ let background = null;
 
 Net.message.connect((data) => {
   if (data?.type === "drawing") {
+    if (!sent.value && JSON.stringify(data) === JSON.stringify(product.value)) return;
     product.value = data;
     strokes.value = [];
     sent.value = false;

@@ -25,22 +25,26 @@ func _ready() -> void:
 	Net.player_left.connect(_on_leave)
 
 func _on_join(id: String, player_name: String, _rejoin: bool) -> void:
-	if players.has(id):
+	var returning := players.has(id)
+	if returning:
 		players[id].connected = true
 		if players[id].name != player_name:
 			players[id].name = player_name
 			player_updated.emit(id, "name", player_name)
-		player_reconnected.emit(id)
 	else:
 		var in_game = not current_screen.get("screen") in ["wait", "lobby"]
 		var audience = in_game or player_ids().size() >= MAX_PLAYERS
 		players[id] = {"name": player_name, "connected": true, "score": 0, "host": false, "audience": audience}
-		player_joined.emit(id)
+
+	# the phone needs its screen before any round resends its task
 	Net.send_to(id, current_screen)
-	
 	if players[id].get("host", false): Net.send_to(id, {"host": true})
 	if players[id].get("audience", false): Net.send_to(id, {"audience": true})
-		
+
+	if returning:
+		player_reconnected.emit(id)
+	else:
+		player_joined.emit(id)
 	players_changed.emit()
 
 func _on_leave(id: String) -> void:

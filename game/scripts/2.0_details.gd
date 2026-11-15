@@ -11,6 +11,7 @@ func _ready() -> void:
 	submitted_list.remove_child(submitted_template)
 	Game.players_changed.connect(_redraw)
 	Net.player_message.connect(_on_player_message)
+	Game.player_reconnected.connect(_send)
 	_redraw()
 	_assign()
 	$"TextureRect/Time Left".max_value = $Timer.wait_time
@@ -21,15 +22,20 @@ func _assign() -> void:
 	Game.upgrades.clear()
 	var dealt = Game.deal(Game.images, Game.player_ids(), func(id, e): return e.player == id or Game.problem_author(e) == id)
 	for upgrader in dealt:
-		var original = dealt[upgrader]
-		assigned[upgrader] = original
-		Net.send_to(upgrader, {
-			"type": "upgrade",
-			"title": original.detail.title,
-			"description": original.detail.description,
-			"reviews": original.get("reviews", []).map(func(r): return r.text),
-			"image": Marshalls.raw_to_base64(original.image.save_png_to_buffer()),
-		})
+		assigned[upgrader] = dealt[upgrader]
+		_send(upgrader)
+
+func _send(id: String) -> void:
+	if not assigned.has(id) or not id in _missing():
+		return
+	var original: Dictionary = assigned[id]
+	Net.send_to(id, {
+		"type": "upgrade",
+		"title": original.detail.title,
+		"description": original.detail.description,
+		"reviews": original.get("reviews", []).map(func(r): return r.text),
+		"image": Marshalls.raw_to_base64(original.image.save_png_to_buffer()),
+	})
 
 func _process(_delta: float) -> void:
 	$"TextureRect/Time Left".value = $Timer.time_left

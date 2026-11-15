@@ -34,8 +34,9 @@ onMounted(() => {
 
       <header class="bar panel">
         <span>
-          {{ Net.state.name }}<template v-if="Net.state.host"> (VIP)</template>
+          {{ Net.state.name }}<template v-if="Net.state.host"> (VIP)</template><template v-if="Net.state.audience"> (audience)</template> ({{Net.state.roomCode}})
         </span>
+
         <span v-if="Net.state.status !== 'connected'" class="status">Reconnecting…</span>
         <button class="leave" @click="Net.leave()">Leave</button>
       </header>

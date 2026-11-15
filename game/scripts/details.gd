@@ -35,6 +35,7 @@ func _ready() -> void:
 	submitted_list.remove_child(submitted_template)
 	Game.players_changed.connect(_redraw)
 	Net.player_message.connect(_on_player_message)
+	Game.player_reconnected.connect(_send)
 	Game.details.clear()
 	_redraw()
 
@@ -49,12 +50,17 @@ func _ready() -> void:
 			"buzzwords": words,
 			"problem": problem
 		}
-		Net.send_to(id, {
-			"type": "details",
-			"buzzwords": words,
-			"problem": problem
-		})
+		_send(id)
 	$Timer.start()
+
+func _send(id: String) -> void:
+	if not assigned.has(id) or not id in _missing():
+		return
+	Net.send_to(id, {
+		"type": "details",
+		"buzzwords": assigned[id].buzzwords,
+		"problem": assigned[id].problem
+	})
 
 func timeout() -> void:
 	$Timer.stop()

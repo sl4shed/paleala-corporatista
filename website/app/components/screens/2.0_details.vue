@@ -7,6 +7,7 @@ const sent = ref(false);
 
 Net.message.connect((data) => {
   if (data?.type === "upgrade") {
+    if (!sent.value && JSON.stringify(data) === JSON.stringify(product.value)) return;
     product.value = data;
     description.value = "";
     sent.value = false;

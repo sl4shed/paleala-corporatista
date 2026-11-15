@@ -12,6 +12,8 @@ const ready = computed(() => title.value.trim() && description.value.trim());
 
 Net.message.connect((data) => {
   if (data?.type === "details") {
+    const same = JSON.stringify([data.buzzwords, data.problem]) === JSON.stringify([buzzwords.value, problem.value]);
+    if (same && !sent.value) return;
     buzzwords.value = data.buzzwords ?? [];
     title.value = "";
     description.value = "";

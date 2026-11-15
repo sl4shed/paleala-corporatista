@@ -11,6 +11,7 @@ func _ready() -> void:
 	submitted_list.remove_child(submitted_template)
 	Game.players_changed.connect(_redraw)
 	Net.player_message.connect(_on_player_message)
+	Game.player_reconnected.connect(_send)
 	Game.images.clear()
 	_redraw()
 
@@ -20,12 +21,17 @@ func _ready() -> void:
 		if not id in Game.player_ids():
 			continue
 		assigned[id] = detail
-		Net.send_to(id, {
-			"type": "drawing",
-			"title": detail.title,
-			"description": detail.description,
-		})
+		_send(id)
 	$Timer.start()
+
+func _send(id: String) -> void:
+	if not assigned.has(id) or not id in _missing():
+		return
+	Net.send_to(id, {
+		"type": "drawing",
+		"title": assigned[id].title,
+		"description": assigned[id].description,
+	})
 
 func _process(_delta: float) -> void:
 	$"TextureRect/Time Left".value = $Timer.time_left

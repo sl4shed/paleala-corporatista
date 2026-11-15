@@ -7,6 +7,7 @@ const sent = ref(false);
 
 Net.message.connect((data) => {
     if (data?.type !== "problem") return;
+    if (!sent.value && JSON.stringify(data.problem) === JSON.stringify(problem.value)) return;
     problem.value = data.problem;
     blanks.value = Array(data.problem.blanks).fill("");
     sent.value = false;

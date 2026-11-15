@@ -12,6 +12,7 @@ func _ready() -> void:
 	submitted_list.remove_child(submitted_template)
 	Game.players_changed.connect(_redraw)
 	Net.player_message.connect(_on_player_message)
+	Game.player_reconnected.connect(_send)
 	_redraw()
 
 	for upgrade in Game.upgrades:
@@ -19,15 +20,21 @@ func _ready() -> void:
 		if not Game.players.has(id):
 			continue
 		assigned[id] = upgrade
-		Net.send_to(id, {
-			"type": "drawing",
-			"label": "Draw the 2.0 upgrades on top:",
-			"title": upgrade.detail.title,
-			"description": upgrade.detail.description,
-			"background": Marshalls.raw_to_base64(upgrade.original.image.save_png_to_buffer()),
-		})
+		_send(id)
 	$"TextureRect/Time Left".max_value = $Timer.wait_time
 	$Timer.start()
+
+func _send(id: String) -> void:
+	if not assigned.has(id) or not id in _missing():
+		return
+	var upgrade: Dictionary = assigned[id]
+	Net.send_to(id, {
+		"type": "drawing",
+		"label": "Draw the 2.0 upgrades on top:",
+		"title": upgrade.detail.title,
+		"description": upgrade.detail.description,
+		"background": Marshalls.raw_to_base64(upgrade.original.image.save_png_to_buffer()),
+	})
 
 func _process(_delta: float) -> void:
 	$"TextureRect/Time Left".value = $Timer.time_left

@@ -142,16 +142,21 @@ func _ready() -> void:
 	submitted_list.remove_child(submitted_template)
 	Game.players_changed.connect(_redraw)
 	Net.player_message.connect(_on_player_message)
+	Game.player_reconnected.connect(_send)
 	_redraw()
 
 	for id in Game.player_ids():
-		var problem = problems.pick_random()
-		assigned[id] = problem
-		Net.send_to(id, {
-			"type": "problem",
-			"problem": problem
-		})
+		assigned[id] = problems.pick_random()
+		_send(id)
 	$Timer.start()
+
+func _send(id: String) -> void:
+	if not assigned.has(id) or Game.problems.any(func(a): return a.player == id):
+		return
+	Net.send_to(id, {
+		"type": "problem",
+		"problem": assigned[id]
+	})
 
 func _fill(template: String, words: Array) -> String:
 	var parts = template.split("___")
