@@ -1,12 +1,12 @@
+Control
+AnimationPlayer
+Label
+Panel
 AudioStreamPlayer
 Timer
 TextureRect
-Control
-Panel
 HBoxContainer
 ProgressBar
 TextureProgressBar
-Label
-AnimationPlayer
 Button
 VBoxContainer

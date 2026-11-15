@@ -60,7 +60,7 @@ function submit(data) {
       </label>
       <label>
         Name
-        <input v-model="name" maxlength="16" autocomplete="nickname" placeholder="Your name" />
+        <input v-model="name" maxlength="12" autocomplete="nickname" placeholder="Your name" />
       </label>
       <p v-if="error" class="error">{{ error }}</p>
       <button :disabled="code.trim().length !== 4 || !name.trim()">Join</button>

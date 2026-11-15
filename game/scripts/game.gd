@@ -6,9 +6,13 @@ signal player_disconnected(id: String)
 signal player_removed(id: String)
 signal player_updated(id: String, key: String, value: Variant)
 
+const MAX_PLAYERS := 4
+
 var problems := []
 var details := []
 var images := []
+var upgrades := []
+var votes := {}
 var players := {}:
 	set(value):
 		players = value
@@ -27,7 +31,9 @@ func _on_join(id: String, player_name: String, _rejoin: bool) -> void:
 			player_updated.emit(id, "name", player_name)
 		player_reconnected.emit(id)
 	else:
-		players[id] = {"name": player_name, "connected": true, "score": 0, "host": false, "audience": false}
+		var in_game = not current_screen.get("screen") in ["wait", "lobby"]
+		var audience = in_game or player_ids().size() >= MAX_PLAYERS
+		players[id] = {"name": player_name, "connected": true, "score": 0, "host": false, "audience": audience}
 		player_joined.emit(id)
 	Net.send_to(id, current_screen)
 	
@@ -70,8 +76,55 @@ func show_on_phones(screen: Dictionary) -> void:
 	current_screen = screen
 	Net.broadcast(screen)
 	
+func initials(player_name: String) -> String:
+	var words = player_name.strip_edges().split(" ", false)
+	if words.is_empty():
+		return "?"
+	if words.size() == 1:
+		return words[0].left(2).to_upper()
+	return (words[0].left(1) + words[1].left(1)).to_upper()
+
 func connected_ids() -> Array:
 	return players.keys().filter(func(id): return players[id].connected)
+
+func player_ids() -> Array:
+	return players.keys().filter(func(id): return not players[id].get("audience", false))
+
+func audience_ids() -> Array:
+	return players.keys().filter(func(id): return players[id].get("audience", false))
+
+# reviews and votes come from the audience, or from the players if nobody is watching
+func judges() -> Array:
+	var audience = audience_ids()
+	return audience if not audience.is_empty() else player_ids()
+
+# random taker -> item pairing where forbidden.call(taker, item) is false when possible
+func deal(items: Array, takers: Array, forbidden: Callable) -> Dictionary:
+	var best := {}
+	var best_bad := INF
+	for attempt in 500:
+		var pool = items.duplicate()
+		pool.shuffle()
+		var result := {}
+		var bad := 0
+		for i in min(takers.size(), pool.size()):
+			result[takers[i]] = pool[i]
+			if forbidden.call(takers[i], pool[i]):
+				bad += 1
+		if bad < best_bad:
+			best = result
+			best_bad = bad
+		if bad == 0:
+			break
+	return best
+
+# who made the problem this product solves; they present it
+func problem_author(entry: Dictionary) -> String:
+	if entry.has("original"):
+		entry = entry.original
+	var problem = entry.get("detail", {}).get("problem", {})
+	var author = problem.get("player", "") if typeof(problem) == TYPE_DICTIONARY else ""
+	return author if players.has(author) else ""
 
 func goto_screen(scene: String) -> void:
 	get_tree().change_scene_to_file("res://scenes/%s.tscn" % scene)

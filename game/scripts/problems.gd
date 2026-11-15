@@ -131,17 +131,20 @@ var fallback_answers = [
 ]
 
 var assigned := {}
+@onready var submitted_list: HBoxContainer = $Panel/HBoxContainer
+@onready var submitted_template: Control = $Panel/HBoxContainer/Panel
 
 var rng = RandomNumberGenerator.new()
 func _process(delta):
 	$"Panel/Time Left".value = $Timer.time_left
 
 func _ready() -> void:
+	submitted_list.remove_child(submitted_template)
 	Game.players_changed.connect(_redraw)
 	Net.player_message.connect(_on_player_message)
 	_redraw()
 
-	for id in Game.players:
+	for id in Game.player_ids():
 		var problem = problems.pick_random()
 		assigned[id] = problem
 		Net.send_to(id, {
@@ -165,6 +168,7 @@ func _on_player_message(id: String, data: Variant) -> void:
 			"player": id,
 			"text": _fill(assigned[id].text, data.get("blanks"))
 		})
+		_redraw()
 
 		if len(Game.problems) == assigned.size() && $Timer.time_left > 5:
 			# all players answered
@@ -182,7 +186,17 @@ func _on_player_message(id: String, data: Variant) -> void:
 			
 
 func _redraw() -> void:
-	pass
+	for child in submitted_list.get_children():
+		child.queue_free()
+	for answer in Game.problems:
+		if answer.get("auto", false) or not Game.players.has(answer.player):
+			continue
+		var panel := submitted_template.duplicate()
+		panel.get_node("Label").text = Game.initials(Game.players[answer.player].name)
+		submitted_list.add_child(panel)
+
+func _exit_tree() -> void:
+	submitted_template.queue_free()
 
 func timeout() -> void:
 	$Timer.stop()

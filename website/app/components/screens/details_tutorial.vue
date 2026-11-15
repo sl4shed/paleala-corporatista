@@ -7,8 +7,8 @@ function skip() {
 </script>
 
 <template>
-  <div>
-      Look at the big screen!
+  <div class="panel">
+      <p>Look at the big screen!</p>
       <button v-if="props.host" @click="skip">Skip the tutorial</button>
   </div>
 </template>

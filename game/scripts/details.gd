@@ -25,21 +25,26 @@ var buzzwords = [
 
 var assigned := {}
 var finished := false
+@onready var submitted_list: HBoxContainer = $TextureRect/HBoxContainer
+@onready var submitted_template: Control = $TextureRect/HBoxContainer/Panel
+
+func _process(delta):
+	$TextureRect/"Time Left".value = $Timer.time_left
 
 func _ready() -> void:
+	submitted_list.remove_child(submitted_template)
 	Game.players_changed.connect(_redraw)
 	Net.player_message.connect(_on_player_message)
 	Game.details.clear()
 	_redraw()
 
-	var problems2 = Game.problems.duplicate()
-	for id in Game.players:
+	var dealt = Game.deal(Game.problems, Game.player_ids(), func(id, p): return p.player == id)
+	for id in dealt:
 		var words = buzzwords.duplicate()
 		words.shuffle()
 		words = words.slice(0, 3)
-		var problem = problems2.pick_random()
-		problems2.remove_at(problems2.find(problem))
-		
+		var problem = dealt[id]
+
 		assigned[id] = {
 			"buzzwords": words,
 			"problem": problem
@@ -90,6 +95,7 @@ func _add(id: String, title: String, description: String, auto: bool) -> void:
 		"problem": assigned[id].problem,
 		"auto": auto or title == "" or description == ""
 	})
+	_redraw()
 
 func _missing() -> Array:
 	var answered = Game.details.map(func(d): return d.player)
@@ -109,4 +115,14 @@ func _finish(early: bool) -> void:
 	Game.goto_screen("drawing_tutorial")
 
 func _redraw() -> void:
-	pass
+	for child in submitted_list.get_children():
+		child.queue_free()
+	for entry in Game.details:
+		if entry.get("auto", false) or not Game.players.has(entry.player):
+			continue
+		var panel := submitted_template.duplicate()
+		panel.get_node("Label").text = Game.initials(Game.players[entry.player].name)
+		submitted_list.add_child(panel)
+
+func _exit_tree() -> void:
+	submitted_template.queue_free()

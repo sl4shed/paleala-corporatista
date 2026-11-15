@@ -23,10 +23,13 @@ Net.message.connect((data) => {
 });
 
 function send(type) {
-  if(!description.value.includes(buzzwords.value[0]) || !description.value.includes(buzzwords.value[1]) || !description.value.includes(buzzwords.value[3])) {
+  const diddy = description.value.toLowerCase().trim();
+  const missing = buzzwords.value.filter((b) => !diddy.includes(b.toLowerCase().trim()));
+  if (type !== "details_force_submit" && missing.length) {
     error.value = "Your description doesn't include the words provided!!"
     return;
   }
+  error.value = "";
 
   const ok = Net.send({
     type,

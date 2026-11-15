@@ -20,6 +20,7 @@ func host() -> void:
 	room_code = ""
 	_was_open = false
 	_ws = WebSocketPeer.new()
+	_ws.inbound_buffer_size = 1 << 22 # drawings are big
 	var err := _ws.connect_to_url(server_url + "?role=host")
 	if err != OK:
 		push_error("Net: could not connect to %s (%s)" % [server_url, error_string(err)])

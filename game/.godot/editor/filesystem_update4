@@ -8,3 +8,11 @@ res://scripts/details.gd
 res://scenes/details.tscn
 res://scripts/lobby.gd
 res://scenes/opening.tscn
+res://scenes/lobby.tscn
+res://scripts/net.gd
+res://scenes/presentation_tutorial.tscn
+res://scenes/presenation.tscn
+res://scripts/presentation.gd
+res://scripts/2.0_details.gd
+res://scripts/drawing.gd
+res://scripts/press_conference.gd

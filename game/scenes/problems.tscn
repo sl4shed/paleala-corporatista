@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://kqlrfcs3y0l8" path="res://textures/bg 2.webp" id="2_loro7"]
 [ext_resource type="Theme" uid="uid://b8kxsmgqni15g" path="res://misc/theme.tres" id="3_loro7"]
 [ext_resource type="AudioStream" uid="uid://bfjupfwhlo4tq" path="res://audio/music2.mp3" id="4_kqw3d"]
-[ext_resource type="AudioStream" uid="uid://dwhs6enw6df3r" path="res://audio/ding.mp3" id="5_oclfy"]
+[ext_resource type="AudioStream" uid="uid://djl6ftfa77sm2" path="res://audio/moving on.mp3" id="5_oclfy"]
+[ext_resource type="AudioStream" uid="uid://dx1kb6hvobvpn" path="res://audio/finished early.mp3" id="6_aksow"]
 
 [node name="Problems" type="Control" unique_id=1891198899]
 layout_mode = 3
@@ -73,12 +74,37 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=745331384]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.5
+offset_top = -159.0
+offset_right = 345.5
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
 [node name="Panel" type="Panel" parent="Panel/HBoxContainer" unique_id=1138279647]
+custom_minimum_size = Vector2(110, 100)
+custom_maximum_size = Vector2(110, 100)
 layout_mode = 2
+theme = ExtResource("3_loro7")
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Panel" unique_id=1330643968]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 58
+text = "GP"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1719053648]
 stream = ExtResource("4_kqw3d")
@@ -88,6 +114,7 @@ autoplay = true
 stream = ExtResource("5_oclfy")
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=1101024143]
+stream = ExtResource("6_aksow")
 
 [node name="Timer" type="Timer" parent="." unique_id=1900215004]
 wait_time = 60.0

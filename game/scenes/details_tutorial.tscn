@@ -2,6 +2,431 @@
 
 [ext_resource type="Script" uid="uid://dl1h233b47g2d" path="res://scripts/details_tutorial.gd" id="1_hrndg"]
 [ext_resource type="Texture2D" uid="uid://kqlrfcs3y0l8" path="res://textures/bg 2.webp" id="2_0igjr"]
+[ext_resource type="AudioStream" uid="uid://cku212a25gk1i" path="res://audio/details1.mp3" id="3_8n6gg"]
+[ext_resource type="Theme" uid="uid://b8kxsmgqni15g" path="res://misc/theme.tres" id="3_op7ow"]
+[ext_resource type="AudioStream" uid="uid://dxl61dpc62ui7" path="res://audio/details2.mp3" id="4_op7ow"]
+[ext_resource type="AudioStream" uid="uid://cgb3as6xc64sg" path="res://audio/details3.mp3" id="5_qahk7"]
+
+[sub_resource type="Animation" id="Animation_qahk7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Problem:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Problem:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(258, 252.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Title:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/Title:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(468, 261)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel/Buzzword 1:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Panel/Buzzword 2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Panel/Buzzword 3:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Panel/Buzzword 1:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(255, 157)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Panel/Buzzword 2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(451, 157)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Panel/Buzzword 3:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(685, 157)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Panel/Buzzword 1:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Panel/Buzzword 2:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Panel/Buzzword 3:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Panel/Description:scale")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("AudioStreamPlayer3:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_o7e2h"]
+resource_name = "tutorial"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Problem:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.7882911, 2.2853386),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Problem:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.2853386, 2.614903, 5.23, 5.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(258, 252.5), Vector2(258, 252.5), Vector2(258, 99), Vector2(258, 99), Vector2(227, -238)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Title:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0666666, 3.5, 3.86),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/Title:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5.23, 5.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(468, 261), Vector2(468, 261), Vector2(468, -114)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(5.74),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel/Buzzword 1:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(6.4333334, 7.1564207),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Panel/Buzzword 2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(6.4333334, 7.1564207),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Panel/Buzzword 3:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(6.4333334, 7.1564207),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Panel/Buzzword 1:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(7.9493976, 8.821819),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(255, 157), Vector2(469, 270)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Panel/Buzzword 2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(7.9493976, 8.821819),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(451, 157), Vector2(452, 273)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Panel/Buzzword 3:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(7.9493976, 8.821819),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(685, 157), Vector2(473, 272)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Panel/Buzzword 1:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(7.942724, 8.838889),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Panel/Buzzword 2:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(7.942724, 8.838889),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Panel/Buzzword 3:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(7.942724, 8.838889),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Panel/Description:scale")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(8.866667, 9.280748, 13.52407, 14.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("AudioStreamPlayer3:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(13.467583),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_25xyb"]
+_data = {
+&"RESET": SubResource("Animation_qahk7"),
+&"tutorial": SubResource("Animation_o7e2h")
+}
 
 [node name="DetailsTutorial" type="Control" unique_id=1103949809]
 layout_mode = 3
@@ -21,3 +446,163 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_0igjr")
 expand_mode = 2
+
+[node name="Title" type="Panel" parent="Panel" unique_id=148031988]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 261.0
+offset_right = 642.0
+offset_bottom = 362.00006
+theme = ExtResource("3_op7ow")
+
+[node name="Label" type="Label" parent="Panel/Title" unique_id=1638036736]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "The AJD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Panel" parent="Panel" unique_id=782542593]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 247.0
+offset_right = 983.0
+offset_bottom = 423.0
+theme = ExtResource("3_op7ow")
+
+[node name="Label" type="Label" parent="Panel/Description" unique_id=1498735218]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -295.0
+offset_top = 3.0
+offset_right = 295.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(709, 90)
+theme_override_font_sizes/font_size = 24
+text = "The Anti Jordan Device is a revolutionary device
+that uses Quantum Blockchain technology to repulse
+Michael Jordan from ever stalking you or your Crypto wallet."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buzzword 1" type="Panel" parent="Panel" unique_id=54235581]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 157.0
+offset_right = 429.00134
+offset_bottom = 258.00104
+pivot_offset = Vector2(91, 52)
+theme = ExtResource("3_op7ow")
+
+[node name="Label" type="Label" parent="Panel/Buzzword 1" unique_id=1380557204]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Crypto"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buzzword 2" type="Panel" parent="Panel" unique_id=28977803]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 157.0
+offset_right = 664.54004
+offset_bottom = 258.0014
+pivot_offset = Vector2(103, 52)
+theme = ExtResource("3_op7ow")
+
+[node name="Label" type="Label" parent="Panel/Buzzword 2" unique_id=1409848045]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Blockchain"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buzzword 3" type="Panel" parent="Panel" unique_id=1866533807]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 157.0
+offset_right = 858.9997
+offset_bottom = 258.00107
+pivot_offset = Vector2(81, 52)
+theme = ExtResource("3_op7ow")
+
+[node name="Label" type="Label" parent="Panel/Buzzword 3" unique_id=1430367561]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Quantum"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Problem" type="Panel" parent="Panel" unique_id=873467289]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = -71.5
+offset_right = 318.0
+offset_bottom = 71.50137
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(358, 570)
+theme = ExtResource("3_op7ow")
+
+[node name="Label" type="Label" parent="Panel/Problem" unique_id=267494106]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -55.0
+offset_right = 127.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_op7ow")
+theme_override_font_sizes/font_size = 31
+text = "I'm being haunted by Michael Jordan!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=267510137]
+stream = ExtResource("3_8n6gg")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=563990208]
+stream = ExtResource("4_op7ow")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=1254112994]
+stream = ExtResource("5_qahk7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2140142135]
+libraries/ = SubResource("AnimationLibrary_25xyb")
+autoplay = &"tutorial"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]
