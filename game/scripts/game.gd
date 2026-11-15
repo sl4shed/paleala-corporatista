@@ -13,6 +13,7 @@ var details := []
 var images := []
 var upgrades := []
 var votes := {}
+var winner := {}
 var players := {}:
 	set(value):
 		players = value
@@ -71,6 +72,10 @@ func reset() -> void:
 	for id in old:
 		player_removed.emit(id)
 	current_screen = {"screen": "wait", "text": "Waiting to start the game..."}
+	for list in [problems, details, images, upgrades]:
+		list.clear()
+	votes.clear()
+	winner = {}
 
 func show_on_phones(screen: Dictionary) -> void:
 	current_screen = screen
@@ -93,10 +98,9 @@ func player_ids() -> Array:
 func audience_ids() -> Array:
 	return players.keys().filter(func(id): return players[id].get("audience", false))
 
-# reviews and votes come from the audience, or from the players if nobody is watching
+# only the audience writes reviews and votes
 func judges() -> Array:
-	var audience = audience_ids()
-	return audience if not audience.is_empty() else player_ids()
+	return audience_ids().filter(func(id): return players[id].connected)
 
 # random taker -> item pairing where forbidden.call(taker, item) is false when possible
 func deal(items: Array, takers: Array, forbidden: Callable) -> Dictionary:

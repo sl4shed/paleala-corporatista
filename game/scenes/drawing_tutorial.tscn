@@ -1,10 +1,148 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://vya63tk866s8"]
 
-[ext_resource type="Script" path="res://scripts/drawing_tutorial.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://pp6kfq7ksyip" path="res://scripts/drawing_tutorial.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://kqlrfcs3y0l8" path="res://textures/bg 2.webp" id="2_bg"]
+[ext_resource type="AudioStream" uid="uid://c1h0823bdge8a" path="res://audio/drawing.mp3" id="3_qrp8e"]
 [ext_resource type="Theme" uid="uid://b8kxsmgqni15g" path="res://misc/theme.tres" id="3_theme"]
+[ext_resource type="Texture2D" uid="uid://bti4tycjpcped" path="res://textures/drawing.png" id="5_fu5am"]
+[ext_resource type="PackedScene" uid="uid://2lvxkniqou8i" path="res://scenes/misc/lucian.tscn" id="6_cxph5"]
 
-[node name="DrawingTutorial" type="Control"]
+[sub_resource type="Animation" id="Animation_n5741"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(407, -457)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Title2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-335, -542)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(451, -244)]
+}
+
+[sub_resource type="Animation" id="Animation_fru8f"]
+resource_name = "animation"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.28739944, 3.0666666, 3.4578753),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(407, -457), Vector2(407, -457), Vector2(407, 102.625)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Title2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.28739944, 5.266667, 6.432273),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-335, -542), Vector2(-335, -542), Vector2(-335, 27.625)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 7.308157, 10.266666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(451, -244), Vector2(451, -244), Vector2(451, 309.815)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Lucian")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.46666667, 3.6403928, 6.5828156, 7.2807856, 11.673891),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"values": [{
+"args": ["TextureRect"],
+"method": &"switch"
+}, {
+"args": ["TextureRect3"],
+"method": &"switch"
+}, {
+"args": ["TextureRect2"],
+"method": &"switch"
+}, {
+"args": ["TextureRect"],
+"method": &"switch"
+}, {
+"args": ["TextureRect2"],
+"method": &"switch"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pk2cd"]
+_data = {
+&"RESET": SubResource("Animation_n5741"),
+&"animation": SubResource("Animation_fru8f")
+}
+
+[node name="DrawingTutorial" type="Control" unique_id=1736663915]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +151,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="Panel" type="TextureRect" parent="."]
+[node name="Panel" type="TextureRect" parent="." unique_id=1022505059]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,37 +161,99 @@ grow_vertical = 2
 texture = ExtResource("2_bg")
 expand_mode = 2
 
-[node name="Text" type="Panel" parent="Panel"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=825931359]
+stream = ExtResource("3_qrp8e")
+
+[node name="Title" type="Panel" parent="." unique_id=1578968245]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -350.0
-offset_top = -90.0
-offset_right = 350.0
-offset_bottom = 90.0
+offset_left = -169.0
+offset_top = -781.0
+offset_right = 150.99927
+offset_bottom = -670.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(358, 570)
+theme = ExtResource("3_theme")
+
+[node name="Label" type="Label" parent="Title" unique_id=649345197]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -55.0
+offset_right = 127.0
+offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_theme")
-
-[node name="Label" type="Label" parent="Panel/Text"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "Now draw your product!
-Investors love a good picture."
+theme_override_font_sizes/font_size = 31
+text = "Stickman Guy"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
-one_shot = true
-autostart = true
+[node name="Title2" type="Panel" parent="." unique_id=7168960]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -911.0
+offset_top = -866.0
+offset_right = -851.9061
+offset_bottom = -805.49994
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.563135
+pivot_offset = Vector2(358, 570)
+theme = ExtResource("3_theme")
 
-[connection signal="timeout" from="Timer" to="." method="animation_finished"]
+[node name="Label" type="Label" parent="Title2" unique_id=279215351]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -55.0
+offset_right = 127.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_theme")
+theme_override_font_sizes/font_size = 31
+text = "=>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1046260423]
+layout_mode = 0
+offset_left = 451.0
+offset_top = -244.0
+offset_right = 1051.0
+offset_bottom = 356.0
+scale = Vector2(0.38272944, 0.38272944)
+texture = ExtResource("5_fu5am")
+
+[node name="Lucian" parent="." unique_id=1729438016 instance=ExtResource("6_cxph5")]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 551.0
+offset_right = 124.0
+offset_bottom = 551.0
+scale = Vector2(0.38450497, 0.38450497)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=35514160]
+libraries/ = SubResource("AnimationLibrary_pk2cd")
+autoplay = &"animation"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

@@ -1,5 +1,112 @@
 [gd_scene format=3 uid="uid://cvxoy3r6i110x"]
 
-[node name="ReviewTutorial" type="Control" unique_id=616201511]
+[ext_resource type="Script" uid="uid://pn6sx11b0xwj" path="res://scripts/review_tutorial.gd" id="1_j2hhc"]
+[ext_resource type="Texture2D" uid="uid://kqlrfcs3y0l8" path="res://textures/bg 2.webp" id="2_dgwmp"]
+[ext_resource type="Theme" uid="uid://b8kxsmgqni15g" path="res://misc/theme.tres" id="3_eofee"]
+[ext_resource type="AudioStream" uid="uid://cusbe72mqe4j" path="res://audio/music1.mp3" id="4_it7p6"]
+
+[sub_resource type="Animation" id="Animation_mmuwc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Panel/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Hi. This is not lucian bec."]
+}
+
+[sub_resource type="Animation" id="Animation_csen7"]
+resource_name = "animation"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Panel/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.3, 6.266667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Hi. This is not lucian bec.", "this is actually the voice in your head.
+and i'm only speaking to the audience. 
+so, if you're not part of the audience... 
+cover your eyes or something.", "You are going to have to write a negative review
+about a product which you will get assigned.
+get as ridiculous as possible."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fqqpe"]
+_data = {
+&"RESET": SubResource("Animation_mmuwc"),
+&"animation": SubResource("Animation_csen7")
+}
+
+[node name="ReviewTutorial" type="Control" unique_id=642876365]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j2hhc")
+
+[node name="Panel" type="TextureRect" parent="." unique_id=1410111752]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dgwmp")
+expand_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=1965546858]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.5
+offset_top = -116.25
+offset_right = 450.5
+offset_bottom = 116.25
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(325, 73)
+theme = ExtResource("3_eofee")
+
+[node name="Label" type="Label" parent="Panel/Panel" unique_id=378694896]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -55.0
+offset_right = 127.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_eofee")
+theme_override_font_sizes/font_size = 31
+text = "Hi. This is not lucian bec."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=312402276]
+stream = ExtResource("4_it7p6")
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=181612042]
+libraries/ = SubResource("AnimationLibrary_fqqpe")
+autoplay = &"animation"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

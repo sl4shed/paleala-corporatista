@@ -76,6 +76,28 @@ func _redraw() -> void:
 		row.get_node("Label").text = "%d. Audience (%d watching)" % [i, audience.size()]
 		list.add_child(row)
 
+	_update_gooblets(audience.size() > 0)
+
+func _update_gooblets(has_audience: bool) -> void:
+	var ids = Game.player_ids()
+	for n in range(1, Game.MAX_PLAYERS + 2):
+		var gooblet = find_child("gooblet%d" % n, true, false)
+		if gooblet == null:
+			continue
+		var show: bool
+		var online := true
+		if n <= Game.MAX_PLAYERS:
+			show = n <= ids.size()
+			online = show and Game.players[ids[n - 1]].connected
+		else:
+			show = has_audience
+		gooblet.modulate.a = 1.0 if online else 0.5
+		if show and not gooblet.visible:
+			gooblet.pivot_offset = Vector2(gooblet.size.x / 2, gooblet.size.y)
+			gooblet.scale = Vector2(1, 0)
+			create_tween().tween_property(gooblet, "scale", Vector2.ONE, 0.3).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+		gooblet.visible = show
+
 func back() -> void:
 	Net.close()
 	Game.reset()

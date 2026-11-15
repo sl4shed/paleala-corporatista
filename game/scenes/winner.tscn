@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://cbx3iutassila"]
+
+[ext_resource type="Script" uid="uid://c3bl1gmamrqy3" path="res://scripts/winner.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://kqlrfcs3y0l8" path="res://textures/bg 2.webp" id="2_bg"]
+[ext_resource type="Theme" uid="uid://b8kxsmgqni15g" path="res://misc/theme.tres" id="3_theme"]
+[ext_resource type="AudioStream" uid="uid://cip3cta7m8104" path="res://audio/ta da.mp3" id="4_tada"]
+[ext_resource type="AudioStream" uid="uid://dos42nv3rjr6w" path="res://audio/crowd.mp3" id="5_crowd"]
+[ext_resource type="AudioStream" uid="uid://dkwf20be5t5f1" path="res://audio/outro1.mp3" id="6_outro1"]
+[ext_resource type="AudioStream" uid="uid://cp700o80d78id" path="res://audio/outro2.mp3" id="7_outro2"]
+
+[node name="Winner" type="Control" unique_id=736700719]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_theme")
+script = ExtResource("1_script")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=539968440]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 2
+
+[node name="Banner" type="Panel" parent="TextureRect" unique_id=2079715017]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -290.0
+offset_right = 360.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TextureRect/Banner" unique_id=873216488]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "And the winner is..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Image" type="TextureRect" parent="TextureRect" unique_id=1830724818]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -440.0
+offset_top = -170.0
+offset_right = -80.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Panel" parent="TextureRect" unique_id=938262661]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -170.0
+offset_right = 440.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TextureRect/Title" unique_id=545424113]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Product 2.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Credits" type="Panel" parent="TextureRect" unique_id=1955141605]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 440.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TextureRect/Credits" unique_id=1354917350]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TaDa" type="AudioStreamPlayer" parent="." unique_id=988629748]
+stream = ExtResource("4_tada")
+
+[node name="Crowd" type="AudioStreamPlayer" parent="." unique_id=2144975]
+stream = ExtResource("5_crowd")
+
+[node name="Outro1" type="AudioStreamPlayer" parent="." unique_id=807381021]
+stream = ExtResource("6_outro1")
+
+[node name="Outro2" type="AudioStreamPlayer" parent="." unique_id=40819926]
+stream = ExtResource("7_outro2")

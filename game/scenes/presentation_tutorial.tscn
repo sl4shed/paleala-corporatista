@@ -1,5 +1,293 @@
 [gd_scene format=3 uid="uid://cnnp6vyra6igv"]
 
+[ext_resource type="Script" uid="uid://dlwfyggua1hn2" path="res://scripts/presentation_tutorial.gd" id="1_tfsyy"]
+[ext_resource type="Texture2D" uid="uid://kqlrfcs3y0l8" path="res://textures/bg 2.webp" id="2_i43ri"]
+[ext_resource type="Theme" uid="uid://b8kxsmgqni15g" path="res://misc/theme.tres" id="3_jx03b"]
+[ext_resource type="PackedScene" uid="uid://2lvxkniqou8i" path="res://scenes/misc/lucian.tscn" id="4_2k46i"]
+[ext_resource type="AudioStream" uid="uid://4tpamcxchqp4" path="res://audio/presentation1.mp3" id="5_tb3fj"]
+[ext_resource type="AudioStream" uid="uid://dk3me64ijs0n" path="res://audio/presentation2.mp3" id="6_d7d3j"]
+[ext_resource type="AudioStream" uid="uid://fo5jwuqb7on" path="res://audio/presentation3.mp3" id="7_t2ysv"]
+[ext_resource type="AudioStream" uid="uid://bvafw128tnpbs" path="res://audio/presentation4.mp3" id="8_eeyby"]
+
+[sub_resource type="Animation" id="Animation_8fu8y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer4:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/Title:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/Panel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_x678c"]
+resource_name = "animation"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.53333336),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer4:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Lucian")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 0.533404, 4.157628, 6.216282, 6.7089667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"values": [{
+"args": ["TextureRect2"],
+"method": &"switch"
+}, {
+"args": ["TextureRect3"],
+"method": &"switch"
+}, {
+"args": ["TextureRect"],
+"method": &"switch"
+}, {
+"args": ["TextureRect3"],
+"method": &"switch"
+}, {
+"args": ["TextureRect2"],
+"method": &"switch"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/Title:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.0333333, 2.5333333, 6.996366, 7.496366),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel/Panel:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.2333333, 3.5333333, 6.996366, 7.2963657),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_corr1"]
+_data = {
+&"RESET": SubResource("Animation_8fu8y"),
+&"animation": SubResource("Animation_x678c")
+}
+
 [node name="PresentationTutorial" type="Control" unique_id=642876365]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tfsyy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1012400193]
+libraries/ = SubResource("AnimationLibrary_corr1")
+autoplay = &"animation"
+
+[node name="Panel" type="TextureRect" parent="." unique_id=1410111752]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i43ri")
+expand_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=1965546858]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = -109.0
+offset_right = 437.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(325, 73)
+theme = ExtResource("3_jx03b")
+
+[node name="Label" type="Label" parent="Panel/Panel" unique_id=378694896]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -55.0
+offset_right = 127.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_jx03b")
+theme_override_font_sizes/font_size = 31
+text = "I'm being haunted by Michael Jordan!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Panel" parent="Panel" unique_id=2024608158]
+layout_mode = 0
+offset_left = 596.0
+offset_top = 101.0
+offset_right = 770.0
+offset_bottom = 202.00006
+theme = ExtResource("3_jx03b")
+
+[node name="Label" type="Label" parent="Panel/Title" unique_id=1659593622]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "The AJD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lucian" parent="." unique_id=1729438016 instance=ExtResource("4_2k46i")]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 553.0
+offset_right = 115.0
+offset_bottom = 553.0
+scale = Vector2(0.432881, 0.432881)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=312402276]
+stream = ExtResource("5_tb3fj")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=38114919]
+stream = ExtResource("6_d7d3j")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=858715519]
+stream = ExtResource("7_t2ysv")
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="." unique_id=821273490]
+stream = ExtResource("8_eeyby")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

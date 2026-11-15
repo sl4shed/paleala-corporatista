@@ -1,6 +1,294 @@
 [gd_scene format=3 uid="uid://bvlyxvopj7tsc"]
 
 [ext_resource type="Script" uid="uid://c8aae3ceiv3np" path="res://scripts/tutorial.gd" id="1_pk062"]
+[ext_resource type="Texture2D" uid="uid://dffmcy8iusiy" path="res://textures/main menu.webp" id="2_fvetl"]
+[ext_resource type="Theme" uid="uid://b8kxsmgqni15g" path="res://misc/theme.tres" id="3_jg64x"]
+[ext_resource type="Texture2D" uid="uid://b58nmgs6jvwip" path="res://textures/opening1.webp" id="3_jo2c7"]
+[ext_resource type="Texture2D" uid="uid://bsibbxy3pygkb" path="res://textures/opening2.webp" id="4_drfco"]
+[ext_resource type="AudioStream" uid="uid://b3bbwp8a6ejik" path="res://audio/chirping.mp3" id="6_myrql"]
+[ext_resource type="AudioStream" uid="uid://dffcb7d85jko2" path="res://audio/boom.mp3" id="7_80pwo"]
+[ext_resource type="AudioStream" uid="uid://dos42nv3rjr6w" path="res://audio/crowd.mp3" id="8_m2a5b"]
+[ext_resource type="AudioStream" uid="uid://bbvr1s46ja4yj" path="res://audio/trumpet.mp3" id="9_61jm2"]
+[ext_resource type="AudioStream" uid="uid://bem5af44w518u" path="res://audio/introduction.mp3" id="10_wy4o8"]
+[ext_resource type="AudioStream" uid="uid://g76e6gkbg250" path="res://audio/introduction 2.mp3" id="11_38xpr"]
+[ext_resource type="Texture2D" uid="uid://drbd0f56hmkng" path="res://textures/explosion.png" id="12_3tstm"]
+
+[sub_resource type="Animation" id="Animation_ttc6a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect4:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer3:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer6:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer3:volume_db")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer2:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AudioStreamPlayer4:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AudioStreamPlayer5:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_r12a4"]
+resource_name = "animation"
+length = 24.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect4:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8.533334, 8.600225, 8.847613, 8.919778),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1e-05, 1e-05), Vector2(5, 5), Vector2(2, 2), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5553247, 4.756907, 4.9248533),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.9248533, 5.1221395, 8.4, 8.597286),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8.566667, 8.735683),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.4, 4.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer3:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(5.1221395, 8.176426),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer6:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(5.5313263),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer3:volume_db")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(8, 8.249495),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer2:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(8.644068),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AudioStreamPlayer4:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(8.951791),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AudioStreamPlayer5:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(14.775893),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pkp2n"]
+_data = {
+&"RESET": SubResource("Animation_ttc6a"),
+&"animation": SubResource("Animation_r12a4")
+}
 
 [node name="Opening" type="Control" unique_id=268744699]
 layout_mode = 3
@@ -11,37 +299,89 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pk062")
 
-[node name="Panel" type="Panel" parent="." unique_id=255044849]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1660925712]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_fvetl")
+expand_mode = 2
 
-[node name="Label" type="Label" parent="Panel" unique_id=1490407400]
+[node name="Label" type="Label" parent="TextureRect" unique_id=692869626]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 451.0
+offset_right = 557.0
+offset_bottom = 537.0
+theme = ExtResource("3_jg64x")
+theme_override_font_sizes/font_size = 69
+text = "At ADS HQ..."
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=43370460]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -110.0
-offset_top = -22.0
-offset_right = 110.0
-offset_bottom = 22.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "TODO put tutorial here"
+texture = ExtResource("3_jo2c7")
+expand_mode = 2
 
-[node name="Label2" type="Label" parent="Panel" unique_id=470646966]
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1226068129]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_drfco")
+expand_mode = 2
+
+[node name="Label2" type="Label" parent="." unique_id=470646966]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 32.0
 offset_top = -55.0
-offset_right = 211.0
+offset_right = 247.0
 offset_bottom = -32.0
 grow_vertical = 0
 text = "The VIP player can skip this!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=120649630]
+stream = ExtResource("6_myrql")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=800185500]
+stream = ExtResource("7_80pwo")
+volume_db = -5.0
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=184563397]
+stream = ExtResource("8_m2a5b")
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="." unique_id=2105452360]
+stream = ExtResource("9_61jm2")
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="." unique_id=143038699]
+stream = ExtResource("10_wy4o8")
+volume_db = 5.073
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="." unique_id=277717376]
+stream = ExtResource("11_38xpr")
+volume_db = 5.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=115011734]
+libraries/ = SubResource("AnimationLibrary_pkp2n")
+autoplay = &"animation"
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=1771312196]
+layout_mode = 0
+offset_left = -824.0
+offset_top = -1133.0
+offset_right = -239.0
+offset_bottom = -534.0
+texture = ExtResource("12_3tstm")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

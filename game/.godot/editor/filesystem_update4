@@ -20,3 +20,17 @@ res://scenes/review_tutorial.tscn
 res://scenes/misc/lucian.tscn
 res://scripts/lucian.gd
 res://scenes/problems_tutorial.tscn
+res://scenes/drawing_tutorial.tscn
+res://scripts/drawing_tutorial.gd
+res://scripts/presentation_tutorial.gd
+res://scenes/main_menu.tscn
+res://scripts/tutorial.gd
+res://scripts/review_tutorial.gd
+res://scripts/review.gd
+res://scripts/vote.gd
+res://scenes/midway_cutscene.tscn
+res://scripts/midway_cutscene.gd
+res://scenes/2.0_details.tscn
+res://scenes/2.0_drawing.tscn
+res://scripts/2.0_drawing.gd
+res://scenes/winner.tscn

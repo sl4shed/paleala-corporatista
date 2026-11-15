@@ -26,3 +26,7 @@ func _connected_count() -> int:
 
 func _redraw() -> void:
 	pass
+
+
+func animation_finished(anim_name: StringName) -> void:
+	Game.goto_screen("problems_tutorial")

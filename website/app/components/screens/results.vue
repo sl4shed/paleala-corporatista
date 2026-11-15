@@ -1,11 +1,5 @@
 <script setup>
 const props = defineProps(["screen", "host", "audience"]);
-
-const again = ref(false);
-
-function playAgain() {
-  if (Net.send({ again: true })) again.value = true;
-}
 </script>
 
 <template>
@@ -15,7 +9,7 @@ function playAgain() {
     <ol>
       <li v-for="line in props.screen?.lines ?? []" :key="line">{{ line }}</li>
     </ol>
-    <button v-if="props.host" :disabled="again" @click="playAgain">Play again</button>
+    <p class="label">Thanks for playing!</p>
   </div>
 </template>
 

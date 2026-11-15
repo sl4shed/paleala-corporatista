@@ -24,8 +24,7 @@ func _ready() -> void:
 	Net.player_message.connect(_on_player_message)
 	Game.player_reconnected.connect(_send)
 
-	var audience_judging = not Game.audience_ids().is_empty()
-	$TextureRect/Panel/Label.text = "The audience is writing reviews!" if audience_judging else "Write some nasty reviews on your phone!"
+	$TextureRect/Panel/Label.text = "The audience is writing reviews!"
 
 	for entry in Game.images:
 		entry.reviews = []
@@ -39,6 +38,9 @@ func _ready() -> void:
 			assigned[id] = products
 			_send(id)
 	_redraw()
+	if assigned.is_empty():
+		_finish.call_deferred(false)
+		return
 	$"TextureRect/Time Left".max_value = $Timer.wait_time
 	$Timer.start()
 

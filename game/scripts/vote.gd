@@ -2,35 +2,34 @@ extends Control
 
 var assigned := {}
 var finished := false
-@onready var submitted_list: HBoxContainer = $TextureRect/HBoxContainer
-@onready var submitted_template: Control = $TextureRect/HBoxContainer/Panel
+var cards := []
+@onready var banner: Label = $TextureRect/Banner/Label
+@onready var product_list: HBoxContainer = $TextureRect/Products
+@onready var card_template: Control = $TextureRect/Products/Card
 
 func _ready() -> void:
-	submitted_list.remove_child(submitted_template)
+	product_list.remove_child(card_template)
 	Net.player_message.connect(_on_player_message)
 	Game.player_reconnected.connect(_send)
 	Game.votes.clear()
-	$TextureRect/Results.visible = false
 
-	var audience_judging = not Game.audience_ids().is_empty()
-	$TextureRect/Panel/Label.text = "The audience is voting for the best product!" if audience_judging else "Vote for the best product on your phone!"
+	for u in Game.upgrades:
+		var card := card_template.duplicate()
+		card.get_node("Image").texture = u.texture
+		card.get_node("Title").text = u.detail.title
+		product_list.add_child(card)
+		cards.append(card)
 
 	for id in Game.judges():
-		var options := []
-		for i in Game.upgrades.size():
-			if not _involved(id, Game.upgrades[i]):
-				options.append(i)
-		if options.is_empty():
-			options = range(Game.upgrades.size())
-		if not options.is_empty():
-			assigned[id] = options
-			_send(id)
-	_redraw()
+		assigned[id] = range(Game.upgrades.size())
+		_send(id)
+	_update_banner()
+
+	if assigned.is_empty() or Game.upgrades.is_empty():
+		_finish.call_deferred()
+		return
 	$"TextureRect/Time Left".max_value = $Timer.wait_time
 	$Timer.start()
-
-func _involved(id: String, upgrade: Dictionary) -> bool:
-	return id == upgrade.player or id == upgrade.get("owner", "") or id == Game.problem_author(upgrade)
 
 func _process(_delta: float) -> void:
 	$"TextureRect/Time Left".value = $Timer.time_left
@@ -48,28 +47,28 @@ func _send(id: String) -> void:
 		}),
 	})
 
+func _update_banner() -> void:
+	banner.text = "The audience is voting for the best product!\n%d/%d votes in" % [Game.votes.size(), assigned.size()]
+
 func timeout() -> void:
 	_finish()
 
 func _on_player_message(id: String, data: Variant) -> void:
 	if not Game.players.has(id) or typeof(data) != TYPE_DICTIONARY: return
-	if finished and data.get("again") == true and Game.get_player_value(id, "host"):
-		Game.goto_screen("lobby")
-		return
-	if data.get("type") != "vote" or not assigned.has(id) or Game.votes.has(id): return
+	if finished or data.get("type") != "vote" or not assigned.has(id) or Game.votes.has(id): return
 	var i := int(data.get("index", -1))
 	if not i in assigned[id]: return
 	Game.votes[id] = i
-	_redraw()
+	if has_node("AudioStreamPlayer2"):
+		$AudioStreamPlayer2.play()
+	_update_banner()
 	if Game.votes.size() == assigned.size():
 		_finish()
 
 func _tally() -> Array:
 	var rows := []
 	for i in Game.upgrades.size():
-		var u = Game.upgrades[i]
-		var count = Game.votes.values().count(i)
-		rows.append({"index": i, "title": u.detail.title, "votes": count, "upgrade": u})
+		rows.append({"index": i, "title": Game.upgrades[i].detail.title, "votes": Game.votes.values().count(i)})
 	rows.sort_custom(func(a, b): return a.votes > b.votes)
 	return rows
 
@@ -82,48 +81,50 @@ func _finish() -> void:
 	finished = true
 	$Timer.stop()
 	$"TextureRect/Time Left".visible = false
-	$TextureRect/Panel.visible = false
-	submitted_list.visible = false
+	if has_node("AudioStreamPlayer"):
+		$AudioStreamPlayer.stop()
 
 	var rows = _tally()
 	var lines := []
 	for row in rows:
 		lines.append("%s - %d vote%s" % [row.title, row.votes, "" if row.votes == 1 else "s"])
-	var text := "No products?!"
-	if not rows.is_empty():
-		var top = rows[0].upgrade
-		for id in [top.player, top.get("owner", "")]:
-			if Game.players.has(id):
-				Game.add_score(id, 1)
-		text = "Best product: %s!\nInvented by %s, upgraded by %s\n\n%s" % [rows[0].title, _name(top.get("owner", "")), _name(top.player), "\n".join(lines)]
-	$TextureRect/Results/Label.text = text
-	$TextureRect/Results.visible = true
-	if has_node("AudioStreamPlayer"):
-		$AudioStreamPlayer.stop()
+	if rows.is_empty():
+		Game.winner = {}
+		Game.goto_screen("winner")
+		return
+
+	banner.text = "The votes are in..."
+	for row in rows:
+		var votes: Label = cards[row.index].get_node("Votes")
+		votes.text = "%d vote%s" % [row.votes, "" if row.votes == 1 else "s"]
+		votes.visible = true
+		_pop(votes)
+		await get_tree().create_timer(0.6).timeout
+
+	var top = Game.upgrades[rows[0].index]
+	for id in [top.player, top.get("owner", "")]:
+		if Game.players.has(id):
+			Game.add_score(id, 1)
+	for i in cards.size():
+		if i != rows[0].index:
+			create_tween().tween_property(cards[i], "modulate:a", 0.35, 0.4)
+	var winner: Control = cards[rows[0].index]
+	winner.pivot_offset = winner.size / 2
+	create_tween().tween_property(winner, "scale", Vector2(1.15, 1.15), 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	banner.text = "Best product: %s!\nInvented by %s, upgraded by %s" % [top.detail.title, _name(top.get("owner", "")), _name(top.player)]
+	_pop($TextureRect/Banner)
 	if has_node("AudioStreamPlayer3"):
 		$AudioStreamPlayer3.play()
 
-	Game.show_on_phones({"screen": "results", "winner": rows[0].title if not rows.is_empty() else "", "lines": lines})
+	Game.show_on_phones({"screen": "results", "winner": top.detail.title, "lines": lines})
+	Game.winner = {"upgrade": top, "lines": lines}
+	await get_tree().create_timer(5.0).timeout
+	Game.goto_screen("winner")
 
-# the whole audience shows up as one "AU" slot
-func _redraw() -> void:
-	for child in submitted_list.get_children():
-		child.queue_free()
-	var audience_done := false
-	for id in Game.votes:
-		if not Game.players.has(id):
-			continue
-		if Game.players[id].get("audience", false):
-			audience_done = true
-			continue
-		_add_panel(Game.initials(Game.players[id].name))
-	if audience_done:
-		_add_panel("AU")
-
-func _add_panel(text: String) -> void:
-	var panel := submitted_template.duplicate()
-	panel.get_node("Label").text = text
-	submitted_list.add_child(panel)
+func _pop(node: Control) -> void:
+	node.pivot_offset = node.size / 2
+	node.scale = Vector2.ZERO
+	create_tween().tween_property(node, "scale", Vector2.ONE, 0.35).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 func _exit_tree() -> void:
-	submitted_template.queue_free()
+	card_template.queue_free()

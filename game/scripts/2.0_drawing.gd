@@ -1,6 +1,6 @@
 extends Control
 
-const NEXT_SCREEN := "press_conference_tutorial"
+const NEXT_SCREEN := "press_conference"
 
 var assigned := {}
 var drawn := {}

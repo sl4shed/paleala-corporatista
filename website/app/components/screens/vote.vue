@@ -17,7 +17,8 @@ function vote(index) {
 
 <template>
   <div class="panel vote">
-    <p v-if="!options.length">Look at the big screen!</p>
+    <p v-if="!audience">The audience is voting for the best product. Fingers crossed!</p>
+    <p v-else-if="!options.length">Look at the big screen!</p>
     <p v-else-if="voted !== null">Vote cast! Look at the big screen.</p>
     <template v-else>
       <p class="label">Which product deserves your money?</p>

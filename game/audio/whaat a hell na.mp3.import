@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b80t4pc50cvvq"
+path="res://.godot/imported/whaat a hell na.mp3-df65154309a95cf1259dcfaa4c17d861.mp3str"
+
+[deps]
+
+source_file="res://audio/whaat a hell na.mp3"
+dest_files=["res://.godot/imported/whaat a hell na.mp3-df65154309a95cf1259dcfaa4c17d861.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

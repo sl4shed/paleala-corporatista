@@ -1,13 +1,13 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://b16037wfdal20"]
 
-[ext_resource type="Script" path="res://scripts/2.0_details.gd" id="1_6wruh"]
+[ext_resource type="Script" uid="uid://hu4bmue83l0b" path="res://scripts/2.0_details.gd" id="1_6wruh"]
 [ext_resource type="Theme" uid="uid://b8kxsmgqni15g" path="res://misc/theme.tres" id="2_theme"]
 [ext_resource type="Texture2D" uid="uid://kqlrfcs3y0l8" path="res://textures/bg 2.webp" id="2_todlm"]
 [ext_resource type="AudioStream" uid="uid://bfjupfwhlo4tq" path="res://audio/music2.mp3" id="3_kmx5u"]
 [ext_resource type="AudioStream" uid="uid://djl6ftfa77sm2" path="res://audio/moving on.mp3" id="4_todlm"]
 [ext_resource type="AudioStream" uid="uid://dx1kb6hvobvpn" path="res://audio/finished early.mp3" id="5_bxflg"]
 
-[node name="Details2" type="Control"]
+[node name="Details2" type="Control" unique_id=214165113]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6wruh")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=400046078]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +26,7 @@ grow_vertical = 2
 texture = ExtResource("2_todlm")
 expand_mode = 2
 
-[node name="Time Left" type="ProgressBar" parent="TextureRect"]
+[node name="Time Left" type="ProgressBar" parent="TextureRect" unique_id=970395810]
 custom_minimum_size = Vector2(894.38, 0)
 layout_mode = 1
 anchors_preset = 7
@@ -45,7 +45,7 @@ max_value = 60.0
 value = 60.0
 show_percentage = false
 
-[node name="Panel" type="Panel" parent="TextureRect"]
+[node name="Panel" type="Panel" parent="TextureRect" unique_id=1860056818]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -60,7 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_theme")
 
-[node name="Label" type="Label" parent="TextureRect/Panel"]
+[node name="Label" type="Label" parent="TextureRect/Panel" unique_id=1594304455]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,7 +73,7 @@ text = "Upgrade someone's product on your phone!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect" unique_id=576002888]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -88,13 +88,13 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Panel" type="Panel" parent="TextureRect/HBoxContainer"]
+[node name="Panel" type="Panel" parent="TextureRect/HBoxContainer" unique_id=333160336]
 custom_minimum_size = Vector2(110, 100)
 custom_maximum_size = Vector2(110, 100)
 layout_mode = 2
 theme = ExtResource("2_theme")
 
-[node name="Label" type="Label" parent="TextureRect/HBoxContainer/Panel"]
+[node name="Label" type="Label" parent="TextureRect/HBoxContainer/Panel" unique_id=673248637]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,17 +106,17 @@ text = "GP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=943400586]
 wait_time = 90.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1881530499]
 stream = ExtResource("3_kmx5u")
 autoplay = true
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1162377992]
 stream = ExtResource("4_todlm")
 
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=1080379326]
 stream = ExtResource("5_bxflg")
 
 [connection signal="timeout" from="Timer" to="." method="timeout"]

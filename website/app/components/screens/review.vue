@@ -24,7 +24,8 @@ function send(type) {
 
 <template>
   <div class="panel review">
-    <p v-if="!products.length">Look at the big screen!</p>
+    <p v-if="!audience">The audience is writing reviews of your products. Look at the big screen!</p>
+    <p v-else-if="!products.length">Look at the big screen!</p>
     <p v-else-if="sent">Reviews posted! Look at the big screen.</p>
     <form v-else @submit.prevent="ready && send('review')">
       <p class="label">Leave a nasty review. Be brutal.</p>

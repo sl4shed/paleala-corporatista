@@ -1,9 +1,10 @@
-AudioStreamPlayer
 TextureRect
-Control
-Node2D
+AudioStreamPlayer
 AnimationPlayer
 Label
+AnimationTree
+Control
+Node2D
 Panel
 Timer
 HBoxContainer

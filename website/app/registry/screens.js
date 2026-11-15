@@ -19,6 +19,7 @@ import review_tutorial from "~/components/screens/review_tutorial.vue"
 import review from "~/components/screens/review.vue"
 import vote from "~/components/screens/vote.vue"
 import results from "~/components/screens/results.vue"
+import midway_cutscene from "~/components/screens/midway_cutscene.vue"
 
 export const SCREENS = {
   "waiting": waiting,
@@ -44,10 +45,12 @@ export const SCREENS = {
   "2.0_details": details2,
   "2.0_drawing_tutorial": drawing2_tutorial,
   "2.0_drawing": drawing2,
+  "midway_cutscene": midway_cutscene,
 
   "press_conference_tutorial": press_conference_tutorial,
   "press_conference": press_conference,
 
   "vote": vote,
-  "results": results
+  "results": results,
+  "winner": results
 }

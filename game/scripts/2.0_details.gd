@@ -1,6 +1,6 @@
 extends Control
 
-const NEXT_SCREEN := "2.0_drawing_tutorial"
+const NEXT_SCREEN := "2.0_drawing"
 
 var assigned := {}
 var finished := false
