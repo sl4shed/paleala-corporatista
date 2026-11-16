@@ -10,7 +10,7 @@ signal player_joined(id: String, player_name: String, rejoin: bool)
 signal player_left(id: String)
 signal player_message(id: String, data: Variant)
 signal disconnected()
-@export var server_url := "ws://localhost:3000/ws"
+@export var server_url := "ws://nicovala.sl4shed.xyz/ws"
 
 var room_code := ""
 var _ws := WebSocketPeer.new()

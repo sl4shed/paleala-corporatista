@@ -79,10 +79,4 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
 }
-
-.stage {
-  /* flex: 1;
-  display: flex;
-  flex-direction: column; */
-}
 </style>

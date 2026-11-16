@@ -71,7 +71,7 @@ function submit(data) {
   </main>
 </template>
 
-<style scoped>
+<style>
 html, body {
     margin: 0;
     overflow: none;
